@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#d4b675"
+    android:fitsSystemWindows="true"
+    tools:context=".DayActivity">
+
+    <include
+        android:id="@+id/layout"
+        layout="@layout/layout_title"
+        android:layout_width="0dp"
+        android:layout_height="44dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <TextView
+        android:id="@+id/tv_action"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:gravity="center"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:text="编辑"
+        android:textColor="@android:color/white"
+        android:textSize="13sp"
+        app:layout_constraintBottom_toBottomOf="@id/layout"
+        app:layout_constraintRight_toRightOf="@id/layout"
+        app:layout_constraintTop_toTopOf="@id/layout" />
+
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="0dp"
+        android:layout_height="44dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:background="@drawable/shape_day_top"
+        android:gravity="center_vertical"
+        android:maxLines="1"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:textColor="@android:color/white"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@id/tv_parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/layout"
+        app:layout_constraintVertical_chainStyle="packed"
+        android:text="距离下一次疫苗注射的时间还有" />
+
+
+    <TextView
+        android:id="@+id/tv_parent"
+        android:layout_width="0dp"
+        android:layout_height="200dp"
+        android:background="@drawable/shape_day_bottom"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="@id/tv_title"
+        app:layout_constraintRight_toRightOf="@id/tv_title"
+        app:layout_constraintTop_toBottomOf="@id/tv_title" />
+
+
+    <TextView
+        android:id="@+id/tv_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:textColor="@android:color/darker_gray"
+        android:textSize="13sp"
+        app:layout_constraintBottom_toBottomOf="@id/tv_parent"
+        app:layout_constraintLeft_toLeftOf="@id/tv_parent"
+        app:layout_constraintRight_toRightOf="@id/tv_parent"
+        tools:text="目标日：2018-12-21 星期五" />
+
+
+    <TextView
+        android:id="@+id/tv_descript"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@android:color/black"
+        android:textSize="70sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@id/tv_time"
+        app:layout_constraintLeft_toLeftOf="@id/tv_parent"
+        app:layout_constraintRight_toRightOf="@id/tv_parent"
+        app:layout_constraintTop_toTopOf="@id/tv_parent"
+        tools:text="20" />
+
+
+</android.support.constraint.ConstraintLayout>

@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.linzhizhou.petchase_12_3"
+    android:versionCode="1"
+    android:versionName="1.0">
+
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <application
+        android:name=".pet.App"
+        android:allowBackup="false"
+        android:icon="@drawable/family"
+        android:label="@string/app_name"
+        android:roundIcon="@drawable/family"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        tools:replace="android:allowBackup">
+        <meta-data
+            android:name="com.amap.api.v2.apikey"
+            android:value="28dbff5ad8c40949d451ff855c5a4d98" />
+        <meta-data
+            android:name="App_Id"
+            android:value="ya9V8tv78845fyu4zMEXA76im9ZE1POU" />
+        <meta-data
+            android:name="Product_Key"
+            android:value="ec6a7211cb6b" />
+
+        <!--屏幕框架适配-->
+        <meta-data
+            android:name="design_width"
+            android:value="1440" />
+        <meta-data
+            android:name="design_height"
+            android:value="2560" />
+
+        <service android:name="com.amap.api.location.APSService" />
+
+        <activity android:name=".pet.ui.activity.LeaderActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".MainActivity" />
+        <activity
+            android:name="com.amap.api.navi.AmapRouteActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize" />
+        <activity
+            android:name=".BasicNaviActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/app_name"
+            android:theme="@android:style/Theme.Light.NoTitleBar" />
+        <activity
+            android:name=".RouteNaviActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/app_name"
+            android:theme="@android:style/Theme.Light.NoTitleBar" />
+        <activity
+            android:name="BasicWalkNaviActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/app_name"
+            android:theme="@android:style/Theme.Light.NoTitleBar" />
+        <activity
+            android:name="RideRouteCalculateActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/app_name"
+            android:theme="@android:style/Theme.Light.NoTitleBar" />
+        <activity
+            android:name=".CustomCarActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/app_name"
+            android:theme="@android:style/Theme.Light.NoTitleBar" />
+        <activity android:name=".BindActivity" />
+        <activity android:name=".LuckydrawActivity" />
+        <activity android:name=".SuggestActivity" />
+        <activity android:name=".FindActivity" />
+        <activity android:name=".DayActivity" />
+        <activity android:name=".EditDayActivity" />
+        <activity android:name=".pet.ui.activity.AgreeDetialActivity" />
+        <activity android:name=".pet.ui.activity.LoginActivity" />
+        <activity android:name=".pet.ui.activity.MissActivity" />
+        <activity android:name=".pet.ui.activity.PetMsgActivity" />
+        <activity android:name=".pet.ui.activity.RegisterActivity" />
+        <activity android:name=".pet.ui.activity.VerificationCodeActivity" />
+    </application>
+
+</manifest>

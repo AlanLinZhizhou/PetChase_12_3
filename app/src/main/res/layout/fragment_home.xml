@@ -1,0 +1,404 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="0dp"
+    tools:context=".MainActivity">
+
+    <RelativeLayout
+        android:id="@+id/r1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary">
+
+        <ImageButton
+            android:id="@+id/settings"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginBottom="0dp"
+            android:background="#00000000"
+            app:srcCompat="@drawable/ic_personal_tab_custom_topic"
+
+            />
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="match_parent"
+            android:layout_height="33.2dp"
+            android:layout_below="@id/settings"
+            android:layout_alignParentLeft="true"
+            app:srcCompat="@drawable/bar3" />
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/r2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#FFFFFF"
+
+        >
+
+        <ImageButton
+            android:id="@+id/head_pic"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginBottom="15dp"
+            android:background="#00000000"
+            app:srcCompat="@drawable/head_icon2" />
+
+        <TextView
+            android:id="@+id/nickname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="126dp"
+            android:layout_marginTop="13dp"
+
+            android:inputType="textPersonName"
+            android:text="TestUser1"
+            android:textSize="20sp" />
+
+        <ImageView
+            android:id="@+id/eye"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/nickname"
+            android:layout_alignLeft="@+id/nickname"
+            app:srcCompat="@drawable/design_ic_visibility" />
+
+        <TextView
+            android:id="@+id/greet_user"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/nickname"
+            android:layout_toRightOf="@+id/eye"
+            android:text="尚未开通会员>"
+            android:textSize="18sp" />
+
+
+    </RelativeLayout>
+
+    <View
+        android:id="@+id/view1"
+        android:layout_width="match_parent"
+        android:layout_height="2dip"
+        android:background="@color/grey_line" />
+
+    <RelativeLayout
+        android:id="@+id/r3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#FFFFFF">
+
+        <EditText
+            android:id="@+id/mypet"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+
+            android:layout_marginStart="15dp"
+            android:background="@null"
+            android:ems="4"
+            android:focusable="false"
+            android:inputType="textPersonName"
+            android:text="我的宠物"
+            android:textColor="@color/light_grey"
+            android:textSize="16sp" />
+
+        <ImageButton
+            android:id="@+id/more_pet"
+            android:layout_width="wrap_content"
+            android:layout_height="22dp"
+            android:layout_marginStart="139dp"
+            android:layout_marginTop="0dp"
+            android:layout_marginBottom="0dp"
+            android:background="#00000000"
+            android:scaleType="centerInside"
+            app:srcCompat="@drawable/chicken" />
+
+    </RelativeLayout>
+
+    <View
+        android:id="@+id/view2"
+        android:layout_width="match_parent"
+        android:layout_height="2dip"
+        android:background="@color/grey_line" />
+
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:background="#FFFFFF"
+        android:columnCount="5"
+        android:rowCount="4"
+        android:useDefaultMargins="true">
+
+
+        <ImageButton
+            android:id="@+id/bind_device"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_row="0"
+            android:layout_column="0"
+            android:layout_gravity="center"
+            android:background="#00000000"
+            app:srcCompat="@drawable/bind_device2" />
+
+        <TextView
+            android:id="@+id/text1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_row="1"
+            android:layout_column="0"
+            android:textSize="12sp"
+            android:layout_gravity="center_horizontal"
+            android:text="绑定设备" />
+
+        <ImageButton
+            android:id="@+id/button2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_row="0"
+            android:layout_column="1"
+            android:layout_gravity="center"
+            android:background="#00000000"
+            app:srcCompat="@drawable/kepu" />
+
+        <TextView
+            android:id="@+id/text2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_row="1"
+            android:layout_column="1"
+            android:layout_gravity="center_horizontal"
+            android:textSize="12sp"
+            android:text="小科普" />
+
+        <ImageButton
+            android:id="@+id/button3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_row="0"
+            android:layout_column="2"
+            android:layout_gravity="center"
+            android:background="#00000000"
+            app:srcCompat="@drawable/find_pet3" />
+
+        <TextView
+            android:id="@+id/text3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_row="1"
+            android:layout_column="2"
+            android:textSize="12sp"
+            android:layout_gravity="center_horizontal"
+            android:text="寻宠启示" />
+
+        <ImageButton
+        android:id="@+id/button4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_row="0"
+        android:layout_column="3"
+        android:layout_gravity="center"
+        android:background="#00000000"
+        app:srcCompat="@drawable/device_info" />
+
+        <TextView
+            android:id="@+id/text4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_row="1"
+            android:layout_column="3"
+            android:textSize="12sp"
+            android:layout_gravity="center_horizontal"
+            android:text="设备信息" />
+
+        <ImageButton
+            android:id="@+id/button41"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_row="0"
+            android:layout_column="4"
+            android:layout_gravity="center"
+            android:background="#00000000"
+            app:srcCompat="@drawable/safe_room" />
+
+        <TextView
+            android:id="@+id/text41"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_row="1"
+            android:layout_column="4"
+            android:textSize="12sp"
+            android:layout_gravity="center_horizontal"
+            android:text="安全区" />
+
+        <ImageButton
+            android:id="@+id/button5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_row="2"
+            android:layout_column="0"
+            android:layout_gravity="center"
+            android:background="#00000000"
+            app:srcCompat="@drawable/award" />
+
+        <TextView
+            android:id="@+id/text5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_row="3"
+            android:layout_column="0"
+            android:layout_gravity="center_horizontal"
+            android:textSize="12sp"
+            android:text="抽奖" />
+
+        <ImageButton
+            android:id="@+id/button6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_row="2"
+            android:layout_column="1"
+            android:layout_gravity="center"
+            android:background="#00000000"
+            app:srcCompat="@drawable/contact_us" />
+
+        <TextView
+            android:id="@+id/text6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_row="3"
+            android:layout_column="1"
+            android:textSize="12sp"
+            android:layout_gravity="center_horizontal"
+            android:text="联系我们" />
+
+        <ImageButton
+            android:id="@+id/button7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_row="2"
+            android:layout_column="2"
+            android:layout_gravity="center"
+            android:background="#00000000"
+            app:srcCompat="@drawable/vaccinum" />
+
+        <TextView
+            android:id="@+id/text7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_row="3"
+            android:layout_column="2"
+            android:layout_gravity="center_horizontal"
+            android:textSize="12sp"
+            android:text="疫苗规划" />
+
+        <ImageButton
+            android:id="@+id/button81"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_row="2"
+            android:layout_column="3"
+            android:layout_gravity="center"
+            android:background="#00000000"
+            app:srcCompat="@drawable/recharge" />
+
+        <TextView
+            android:id="@+id/text81"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_row="3"
+            android:layout_column="3"
+            android:textSize="12sp"
+            android:layout_gravity="center_horizontal"
+            android:text="充值" />
+
+        <ImageButton
+            android:id="@+id/button8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_row="2"
+            android:layout_column="4"
+            android:layout_gravity="center"
+            android:background="#00000000"
+            app:srcCompat="@drawable/find_more" />
+
+        <TextView
+            android:id="@+id/text8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_row="3"
+            android:layout_column="4"
+            android:textSize="12sp"
+            android:layout_gravity="center_horizontal"
+            android:text="更多" />
+    </GridLayout>
+
+
+    <View
+        android:id="@+id/view3"
+        android:layout_width="match_parent"
+        android:layout_height="1dip"
+        android:background="@color/grey_line" />
+
+    <RelativeLayout
+        android:id="@+id/r5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#FFFFFF">
+
+        <EditText
+            android:id="@+id/myinfo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:background="@null"
+            android:ems="4"
+            android:focusable="false"
+            android:inputType="textPersonName"
+            android:text="我的信息"
+            android:textColor="@color/light_grey"
+            android:textSize="16sp" />
+
+        <ImageButton
+            android:id="@+id/editMyInfo"
+            android:layout_width="22dp"
+            android:layout_height="22dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="139dp"
+            android:background="#00000000"
+            android:scaleType="fitCenter"
+            app:srcCompat="@drawable/pen2" />
+
+    </RelativeLayout>
+
+    <View
+        android:id="@+id/view4"
+        android:layout_width="match_parent"
+        android:layout_height="1dip"
+        android:background="@color/grey_line" />
+
+    <RelativeLayout
+        android:id="@+id/r6"
+        android:layout_width="match_parent"
+        android:layout_height="131dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginRight="0dp"
+        android:layout_marginBottom="0dp"
+        android:background="@drawable/home_bac5">
+
+
+    </RelativeLayout>
+</LinearLayout>

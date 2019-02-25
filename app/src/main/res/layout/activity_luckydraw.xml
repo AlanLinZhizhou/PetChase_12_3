@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    tools:context=".LuckydrawActivity">
+
+
+    <include
+        android:id="@+id/layout"
+        layout="@layout/layout_title"
+        android:layout_width="0dp"
+        android:layout_height="44dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <TextView
+        android:id="@+id/tv_action"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:gravity="center"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:text="保存"
+        android:textColor="@android:color/white"
+        android:textSize="13sp"
+        app:layout_constraintBottom_toBottomOf="@id/layout"
+        app:layout_constraintRight_toRightOf="@id/layout"
+        app:layout_constraintTop_toTopOf="@id/layout" />
+
+
+    <TextView
+        android:id="@+id/tv_descript"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:lineSpacingExtra="5dp"
+        android:padding="15dp"
+        android:text="恭喜您已中奖：一袋猫粮！我们将在3-7个工作日内发出，请您准确填写收货地址，填写后不能更改。"
+        android:textColor="@android:color/darker_gray"
+        android:textSize="15sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/layout" />
+
+
+    <EditText
+        android:id="@+id/et_name"
+        android:layout_width="0dp"
+        android:layout_height="44dp"
+        android:background="@android:color/white"
+        android:gravity="center_vertical|right"
+        android:hint="请输入收货人名字"
+        android:maxLength="20"
+        android:maxLines="1"
+        android:paddingLeft="200dp"
+        android:paddingRight="15dp"
+        android:textColor="@android:color/black"
+        android:textColorHint="@android:color/darker_gray"
+        android:textSize="13sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_descript" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:text="收货人"
+        android:textColor="@android:color/black"
+        android:textSize="13sp"
+        app:layout_constraintBottom_toBottomOf="@id/et_name"
+        app:layout_constraintLeft_toLeftOf="@id/et_name"
+        app:layout_constraintTop_toTopOf="@id/et_name" />
+
+
+    <EditText
+        android:id="@+id/et_phone"
+        android:layout_width="0dp"
+        android:layout_height="44dp"
+        android:layout_marginTop="1dp"
+        android:background="@android:color/white"
+        android:gravity="center_vertical|right"
+        android:hint="请输入电话号码"
+        android:inputType="phone"
+        android:maxLength="20"
+        android:maxLines="1"
+        android:paddingLeft="200dp"
+        android:paddingRight="15dp"
+        android:textColor="@android:color/black"
+        android:textColorHint="@android:color/darker_gray"
+        android:textSize="13sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/et_name" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:text="手机号码"
+        android:textColor="@android:color/black"
+        android:textSize="13sp"
+        app:layout_constraintBottom_toBottomOf="@id/et_phone"
+        app:layout_constraintLeft_toLeftOf="@id/et_phone"
+        app:layout_constraintTop_toTopOf="@id/et_phone" />
+
+    <TextView
+        android:id="@+id/tv_city"
+        android:layout_width="0dp"
+        android:layout_height="44dp"
+        android:layout_marginTop="1dp"
+        android:background="@android:color/white"
+        android:gravity="center_vertical|right"
+        android:maxLength="20"
+        android:maxLines="1"
+        android:paddingLeft="200dp"
+        android:paddingRight="15dp"
+        android:textColor="@android:color/black"
+        android:textSize="13sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/et_phone" />
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:text="所在区域"
+        android:textColor="@android:color/black"
+        android:textSize="13sp"
+        app:layout_constraintBottom_toBottomOf="@id/tv_city"
+        app:layout_constraintLeft_toLeftOf="@id/tv_city"
+        app:layout_constraintTop_toTopOf="@id/tv_city" />
+
+
+    <EditText
+        android:id="@+id/ed_descript"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="1dp"
+        android:background="@android:color/white"
+        android:gravity="start"
+        android:hint="详细地址：如道路，门牌号，小区，楼栋号，单元号等等"
+        android:minHeight="100dp"
+        android:padding="15dp"
+        android:textColor="@android:color/black"
+        android:textColorHint="@android:color/darker_gray"
+        android:textSize="13sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_city" />
+
+
+</android.support.constraint.ConstraintLayout>

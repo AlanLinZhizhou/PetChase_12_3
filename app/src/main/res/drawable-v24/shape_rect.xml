@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- 内部颜色 -->
+    <solid
+        android:color="#ffffff" />
+    <!-- 边缘线条颜色 -->
+    <stroke
+        android:width="2dp"
+        android:color="@color/light_grey" />
+    <!-- 圆角的幅度 -->
+    <corners
+        android:topLeftRadius="5dip"
+        android:topRightRadius="5dip"
+        android:bottomLeftRadius="5dip"
+        android:bottomRightRadius="5dip" />
+
+    <!--阴影-->
+    <item
+        android:bottom="3dp"
+        android:right="3dp">
+        <shape android:shape="rectangle" >
+
+            <gradient
+                android:angle="270"
+                android:endColor="#FFFFFF"
+                android:startColor="@color/grey_line" />
+
+            <corners
+                android:bottomLeftRadius="5dip"
+                android:bottomRightRadius="5dip"
+                android:topLeftRadius="5dip"
+                android:topRightRadius="5dip" />
+        </shape>
+    </item>
+
+</layer-list>

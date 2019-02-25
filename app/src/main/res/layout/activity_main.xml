@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <FrameLayout
+        android:id="@+id/homeContent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    </FrameLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="vertical">
+
+        <View
+            android:id="@+id/view_main"
+            android:layout_width="match_parent"
+            android:layout_height="1dip"
+            android:background="@color/grey_line" />
+
+        <RadioGroup
+            android:id="@+id/radioGroup"
+            android:layout_width="match_parent"
+            android:layout_height="58dp"
+            android:layout_marginBottom="0dp"
+            android:orientation="horizontal">
+
+
+            <RadioButton
+                android:id="@+id/home"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_weight="1"
+                android:button="@null"
+                android:drawableTop="@drawable/selector_home_find"
+                android:gravity="center"
+                android:text="@string/home_home"
+                android:textColor="@drawable/selector_tab_text_color"
+                android:textSize="12dp" />
+
+            <RadioButton
+                android:id="@+id/navigate"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_weight="1"
+                android:button="@null"
+                android:drawableTop="@drawable/selector_discover_find"
+                android:gravity="center"
+                android:text="@string/home_locate"
+                android:textColor="@drawable/selector_tab_text_color"
+                android:textSize="12dp" />
+
+            <RadioButton
+                android:id="@+id/activity"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_weight="1"
+                android:button="@null"
+                android:drawableTop="@drawable/selector_social_find"
+                android:gravity="center"
+                android:text="@string/home_find"
+                android:textColor="@drawable/selector_tab_text_color"
+                android:textSize="12dp" />
+
+            <RadioButton
+                android:id="@+id/me"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_weight="1"
+                android:button="@null"
+                android:drawableTop="@drawable/selector_me_find"
+                android:gravity="center"
+                android:text="@string/home_me"
+                android:textColor="@drawable/selector_tab_text_color"
+                android:textSize="12dp" />
+        </RadioGroup>
+
+    </LinearLayout>
+
+</RelativeLayout>

@@ -13,17 +13,26 @@
         android:id="@+id/r1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#00000000"
+        android:background="@color/colorPrimary"
         >
 
-        <ImageButton
-            android:id="@+id/settings"
+
+
+        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:text="宠物追踪"
+            android:layout_centerHorizontal="true"
+            android:textColor="@color/white"
+            android:textSize="24sp"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="设置"
+            android:textColor="@color/white"
+            android:textSize="18sp"
             android:layout_alignParentRight="true"
-            android:layout_marginBottom="0dp"
-            android:background="#00000000"
-            app:srcCompat="@drawable/ic_daily_vote_up"
 
             />
 

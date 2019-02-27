@@ -12,6 +12,7 @@ import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
+import android.support.v4.content.ContextCompat;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -44,6 +45,8 @@ public class NavigateFragment extends Fragment {
     private MapView mapView;
     private AMap aMap;
     private LocationManager locationManager;
+    private Location location;
+    private String locationProvider;
 
     @Override
     public void onAttach(Context context) {
@@ -55,7 +58,8 @@ public class NavigateFragment extends Fragment {
     private ImageButton btn_cycling;
     private ImageButton car_navi;
     private ImageButton walk_navi;
-
+    private double jd;   //手机的经纬度
+    private double wd;
     @Override
     public void setMenuVisibility(boolean menuVisible) {
         super.setMenuVisibility(menuVisible);
@@ -96,7 +100,14 @@ public class NavigateFragment extends Fragment {
         mapView = view.findViewById(R.id.fragment_map);
         mapView.onCreate(savedInstanceState);
         init();
-
+        //给手机位置标点
+        requestPermission();
+        getLocationInfo();
+        LatLng latLng = new LatLng(wd, jd);
+        MarkerOptions markerOptions = new MarkerOptions();
+        markerOptions.position(latLng);
+        Marker marker = aMap.addMarker(markerOptions);
+        //给宠物位置标点
         ZYFSdk.getInstance().getBindDeviceDetails(context, "001221A003E6", new ZYFGetBindDeviceListener() {
             @Override
             public void onComplete(DeviceDetailsEntity deviceDetailsEntity) {
@@ -192,6 +203,78 @@ public class NavigateFragment extends Fragment {
         }
     }
 
-    private void updatePosition(Location location) {
+//    private void updatePosition(Location location) {
+//    }
+
+    private void requestPermission() {
+        if (ContextCompat.checkSelfPermission(context, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+            if (ActivityCompat.shouldShowRequestPermissionRationale(getActivity(), Manifest.permission.ACCESS_COARSE_LOCATION)) {
+                Toast.makeText(getActivity(), "拒绝将无法进行宠物追踪哦", Toast.LENGTH_SHORT);
+            }
+            ActivityCompat.requestPermissions(getActivity(),
+                    new String[]{Manifest.permission.ACCESS_COARSE_LOCATION, Manifest.permission.ACCESS_FINE_LOCATION}, 0);
+        }
+    }
+
+    private void getLocationInfo() {
+        locationManager = (LocationManager) getActivity().getSystemService(Context.LOCATION_SERVICE);
+        // 获取所有可用的位置提供器
+        List<String> providers = locationManager.getProviders(true);
+        if (providers.contains(LocationManager.GPS_PROVIDER)) {
+            // 如果是GPS
+            locationProvider = LocationManager.GPS_PROVIDER;
+        }
+    else if (providers.contains(LocationManager.NETWORK_PROVIDER)) {
+       // 如果是Network
+       locationProvider = LocationManager.NETWORK_PROVIDER;
+    }
+        else {
+            Toast.makeText(getActivity(), "没有可用的位置提供器", Toast.LENGTH_SHORT).show();
+            return;
+        }
+        // 获取Location
+        if (ActivityCompat.checkSelfPermission(context, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(context, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+            // TODO: Consider calling
+            //    ActivityCompat#requestPermissions
+            // here to request the missing permissions, and then overriding
+            //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
+            //                                          int[] grantResults)
+            // to handle the case where the user grants the permission. See the documentation
+            // for ActivityCompat#requestPermissions for more details.
+            return;
+        }
+        Location location = locationManager.getLastKnownLocation(locationProvider);
+
+        if (location != null) {
+            // 不为空,显示地理位置经纬度
+            jd =location.getLongitude();
+            wd =location.getLatitude();
+        } else {
+           // ToastUtils.showToast(this, "GPS未定位到位置");
+            Toast.makeText(getActivity(),"GPS未定位到位置",Toast.LENGTH_SHORT);
+            System.out.println("GPS未定位到位置,请查看是否打开了GPS ？");
+        }
+        // 监视地理位置变化
+        locationManager.requestLocationUpdates(locationProvider, 2000, 1, new LocationListener() {
+            @Override
+            public void onLocationChanged(Location location) {
+
+            }
+
+            @Override
+            public void onStatusChanged(String provider, int status, Bundle extras) {
+
+            }
+
+            @Override
+            public void onProviderEnabled(String provider) {
+
+            }
+
+            @Override
+            public void onProviderDisabled(String provider) {
+
+            }
+        });
     }
 }

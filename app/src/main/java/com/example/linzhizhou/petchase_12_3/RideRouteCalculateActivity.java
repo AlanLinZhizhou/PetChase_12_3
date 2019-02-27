@@ -2,6 +2,7 @@ package com.example.linzhizhou.petchase_12_3;
 
 import android.Manifest;
 import android.content.Context;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.Location;
 import android.location.LocationListener;
@@ -68,6 +69,11 @@ public class RideRouteCalculateActivity extends BaseActivity {
             }
         });
         //double b=getDeviceLocation.getDeviceJd();
+        Intent getJWd=getIntent();
+        String getJd=getJWd.getStringExtra("passjd");
+        String getWd=getJWd.getStringExtra("passwd");
+        deviceJd=Double.parseDouble(getJd);
+        deviceWd=Double.parseDouble(getWd);
         NaviLatLng tempEndPoint=new NaviLatLng(deviceWd,deviceJd);
         mAMapNavi.calculateRideRoute(tempStartPoint,tempEndPoint);
     }

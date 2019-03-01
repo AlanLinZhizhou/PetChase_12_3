@@ -2,6 +2,7 @@ package com.example.linzhizhou.petchase_12_3;
 
 import android.Manifest;
 import android.content.Context;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.Location;
 import android.location.LocationListener;
@@ -11,13 +12,10 @@ import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.widget.Toast;
 
-import com.amap.api.navi.AMapNaviView;
 import com.amap.api.navi.enums.NaviType;
 import com.amap.api.navi.model.NaviLatLng;
 import com.tckj.zyfsdk.ZYFSdk;
-import com.tckj.zyfsdk.entity.BaseEntity;
 import com.tckj.zyfsdk.entity.DeviceDetailsEntity;
-import com.tckj.zyfsdk.http.zhttp.listener.ZYFBindDeviceListener;
 import com.tckj.zyfsdk.http.zhttp.listener.ZYFGetBindDeviceListener;
 
 import java.util.List;
@@ -33,7 +31,7 @@ public class RideRouteCalculateActivity extends BaseActivity {
     private double deviceJd;
     private double deviceWd;
     private Context context;
-    //private  GetBindDeviceLocation getDeviceLocation;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,7 +41,7 @@ public class RideRouteCalculateActivity extends BaseActivity {
         mAMapNaviView = findViewById(R.id.navi_view);
         mAMapNaviView.onCreate(savedInstanceState);
         mAMapNaviView.setAMapNaviViewListener(this);
-        //getDeviceLocation=new GetBindDeviceLocation();
+
     }
 
     @Override
@@ -51,13 +49,13 @@ public class RideRouteCalculateActivity extends BaseActivity {
         super.onInitNaviSuccess();
         requestPermission();
         getLocationInfo();
-        NaviLatLng tempStartPoint=new NaviLatLng(wd,jd);
+        NaviLatLng tempStartPoint = new NaviLatLng(wd, jd);
 
         ZYFSdk.getInstance().getBindDeviceDetails(context, "001221A003E6", new ZYFGetBindDeviceListener() {
             @Override
             public void onComplete(DeviceDetailsEntity deviceDetailsEntity) {
-                deviceJd=Double.parseDouble(deviceDetailsEntity.getRtData().getRecords().get(8).getFieldValue().toString());
-                deviceWd=Double.parseDouble(deviceDetailsEntity.getRtData().getRecords().get(9).getFieldValue().toString());
+                deviceJd = Double.parseDouble(deviceDetailsEntity.getRtData().getRecords().get(8).getFieldValue().toString());
+                deviceWd = Double.parseDouble(deviceDetailsEntity.getRtData().getRecords().get(9).getFieldValue().toString());
             }
 
             @Override
@@ -68,8 +66,13 @@ public class RideRouteCalculateActivity extends BaseActivity {
             }
         });
         //double b=getDeviceLocation.getDeviceJd();
-        NaviLatLng tempEndPoint=new NaviLatLng(deviceWd,deviceJd);
-        mAMapNavi.calculateRideRoute(tempStartPoint,tempEndPoint);
+        Intent getJWd = getIntent();
+        String getJd = getJWd.getStringExtra("passjd");
+        String getWd = getJWd.getStringExtra("passwd");
+        deviceJd = Double.parseDouble(getJd);
+        deviceWd = Double.parseDouble(getWd);
+        NaviLatLng tempEndPoint = new NaviLatLng(deviceWd, deviceJd);
+        mAMapNavi.calculateRideRoute(tempStartPoint, tempEndPoint);
     }
 
     @Override
@@ -88,9 +91,7 @@ public class RideRouteCalculateActivity extends BaseActivity {
         }
     }
 
-//    ZYFGetBindDeviceListener zyfGetBindDeviceListener(){
-//
-//    }
+
     private void getLocationInfo() {
         locationManager = (LocationManager) this.getSystemService(Context.LOCATION_SERVICE);
         // 获取所有可用的位置提供器

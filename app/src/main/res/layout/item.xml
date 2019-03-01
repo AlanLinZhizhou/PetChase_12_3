@@ -8,12 +8,13 @@
 
     <TextView
         android:id="@+id/helloText"
-        android:textSize="20sp"
-        android:textColor="@color/black"
-        android:background="@drawable/card_bac"
+        android:textSize="17sp"
+        android:textColor="@color/white"
+        android:background="@drawable/a2"
         android:gravity="center"
         tools:text="@string/hello_world"
         android:layout_width="match_parent"
+        android:textStyle="bold"
         android:layout_height="match_parent" />
 
     <View
@@ -34,3 +35,4 @@
         android:background="#03A9F4" />
 
 </FrameLayout>
+

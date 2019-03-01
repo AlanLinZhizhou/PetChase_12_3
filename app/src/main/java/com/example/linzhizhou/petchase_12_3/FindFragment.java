@@ -1,6 +1,9 @@
 package com.example.linzhizhou.petchase_12_3;
+
 import android.content.Context;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
+import android.provider.ContactsContract;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -9,6 +12,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.ImageButton;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.lorentzos.flingswipe.SwipeFlingAdapterView;
@@ -26,9 +31,9 @@ import butterknife.OnClick;
 public class FindFragment extends Fragment {
     private ArrayList<String> al;
     private ArrayAdapter<String> arrayAdapter;
-    private  int i;
+    private int i;
     private String strurl = "http://192.168.137.1:8080/Serverlet/hello?id=";
-
+    private TextView t1;
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
@@ -52,7 +57,27 @@ public class FindFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = LayoutInflater.from(getActivity()).inflate(R.layout.fragment_find, null);
         flingContainer = view.findViewById(R.id.frame);
+
         //ButterKnife.inject(getActivity());
+
+        //TextView t1=view.findViewById(R.id.helloText);
+        //t1.setBackgroundResource(R.drawable.find_pet3);
+        ImageButton buttonLeft=view.findViewById(R.id.left1);
+        buttonLeft.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                flingContainer.getTopCardListener().selectLeft();
+            }
+        });
+        ImageButton buttonRight=view.findViewById(R.id.right1);
+        buttonRight.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                flingContainer.getTopCardListener().selectRight();
+            }
+        });
+
+
         new Thread(networkTask).start();
         try {
             Thread.sleep(1000);
@@ -82,6 +107,7 @@ public class FindFragment extends Fragment {
             public void onRightCardExit(Object dataObject) {
 
                 //makeToast(MyActivity.this, "Right!");
+                //建议改成背景拓切换的代码
             }
 
             @Override
@@ -104,7 +130,7 @@ public class FindFragment extends Fragment {
         flingContainer.setOnItemClickListener(new SwipeFlingAdapterView.OnItemClickListener() {
             @Override
             public void onItemClicked(int itemPosition, Object dataObject) {
-                makeToast(getActivity(), "Clicked!");
+                //makeToast(getActivity(), "Clicked!");
             }
         });
         //sleep();
@@ -146,11 +172,11 @@ public class FindFragment extends Fragment {
 //            arrayAdapter = new ArrayAdapter<>(context, R.layout.item, R.id.helloText, al );
             URL url = null;
             //采用get方式访问spring云服务器
-            for (int i=1;i<=10 ;i++ ) {
+            for (int i = 1; i <= 10; i++) {
                 try {
                     //String temp= ((String) i);
-                    strurl="http://192.168.137.1:8080/Serverlet/hello?id=";
-                    strurl+=i;
+                    strurl = "http://192.168.137.1:8080/Serverlet/hello?id=";
+                    strurl += i;
                     url = new URL(strurl);
                     HttpURLConnection urlConn = (HttpURLConnection) url.openConnection();
                     InputStreamReader in = new InputStreamReader(urlConn.getInputStream());
@@ -167,6 +193,11 @@ public class FindFragment extends Fragment {
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
+
+                LayoutInflater facs = getLayoutInflater();
+                View view1 = facs.inflate(R.layout.item, null);
+                t1 = view1.findViewById(R.id.helloText);
+                t1.setBackground(getResources().getDrawable(R.drawable.guide_1_anim_1));
 
                 arrayAdapter = new ArrayAdapter<>(context, R.layout.item, R.id.helloText, al);
                 flingContainer.setAdapter(arrayAdapter);

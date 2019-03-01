@@ -48,6 +48,8 @@ public class NavigateFragment extends Fragment {
     private Location location;
     private String locationProvider;
 
+    private String passjd;
+    private String passwd;
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
@@ -112,8 +114,12 @@ public class NavigateFragment extends Fragment {
             @Override
             public void onComplete(DeviceDetailsEntity deviceDetailsEntity) {
                 // List a=new ArrayList();
-                double dLnt = Double.parseDouble(deviceDetailsEntity.getRtData().getRecords().get(8).getFieldValue().toString());//经度
-                double dLat = Double.parseDouble(deviceDetailsEntity.getRtData().getRecords().get(9).getFieldValue().toString());//经度
+                passjd=deviceDetailsEntity.getRtData().getRecords().get(8).getFieldValue().toString();
+                passwd=deviceDetailsEntity.getRtData().getRecords().get(9).getFieldValue().toString();
+                double dLnt=Double.parseDouble(passjd);
+                double dLat=Double.parseDouble(passwd);
+                //double dLnt = Double.parseDouble(deviceDetailsEntity.getRtData().getRecords().get(8).getFieldValue().toString());//经度
+                //double dLat = Double.parseDouble(deviceDetailsEntity.getRtData().getRecords().get(9).getFieldValue().toString());//经度
                 LatLng latLng = new LatLng(dLat, dLnt);
                 //final Marker marker = aMap.addMarker(new MarkerOptions().position(latLng).title("宠物").snippet("Destination"));
                 CameraUpdate cu = CameraUpdateFactory.changeLatLng(latLng);
@@ -153,6 +159,8 @@ public class NavigateFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getActivity(), CustomCarActivity.class);
+                intent.putExtra("passjd",passjd);
+                intent.putExtra("passwd",passwd);
                 startActivity(intent);
             }
         });
@@ -161,6 +169,8 @@ public class NavigateFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getActivity(), RideRouteCalculateActivity.class);
+                intent.putExtra("passjd",passjd);
+                intent.putExtra("passwd",passwd);
                 startActivity(intent);
             }
         });
@@ -169,6 +179,9 @@ public class NavigateFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getActivity(), BasicWalkNaviActivity.class);
+                intent.putExtra("passjd",passjd);
+                intent.putExtra("passwd",passwd);
+
                 startActivity(intent);
             }
         });

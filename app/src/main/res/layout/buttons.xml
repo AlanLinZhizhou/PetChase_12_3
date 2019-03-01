@@ -1,24 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="horizontal"
     android:layout_gravity="center_horizontal|bottom"
-    android:layout_marginBottom="20dp"
+    android:layout_marginBottom="55dp"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content">
 
-    <Button
-        android:id="@+id/left"
-        android:layout_margin="10dp"
-        android:text="Left"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
 
-    <Button
-        android:id="@+id/right"
-        android:layout_margin="10dp"
-        android:text="Right"
+    <ImageButton
+        android:id="@+id/left1"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:background="@drawable/find_left"
+
+        />
+    <ImageButton
+        android:id="@+id/middle1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:background="@drawable/find_middle"
+
+        />
+    <ImageButton
+        android:id="@+id/right1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:background="@drawable/find_right"
+
+        />
+
+
+
 
 </LinearLayout>

@@ -4,9 +4,13 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.widget.Button;
 import android.widget.FrameLayout;
+import android.widget.ImageButton;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+
+import butterknife.Bind;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -54,6 +58,7 @@ public class MainActivity extends AppCompatActivity {
                         index=3;
                         break;
                 }
+
                 //通过Fragment的适配器Adapter和index来替换帧布局中的内容
                 Fragment fragment=(Fragment)adapter.instantiateItem(homeContent,index);
 

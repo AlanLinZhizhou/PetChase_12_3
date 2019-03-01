@@ -2,9 +2,12 @@ package com.example.linzhizhou.petchase_12_3;
 
 import android.content.Context;
 import android.content.Intent;
+import android.icu.text.IDNA;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -37,9 +40,11 @@ public class HomeFragment extends Fragment implements View.OnClickListener
         ImageButton b1 = view.findViewById(R.id.bind_device);
         b1.setOnClickListener(this);
         ImageButton b2 = view.findViewById(R.id.button2);
+        b2.setOnClickListener(this);
         ImageButton b3 = view.findViewById(R.id.button3);
         b3.setOnClickListener(this);
         ImageButton b4 = view.findViewById(R.id.button4);
+        b4.setOnClickListener(this);
         ImageButton b5 = view.findViewById(R.id.button5);
         b5.setOnClickListener(this);
         ImageButton b6 = view.findViewById(R.id.button6);
@@ -78,6 +83,12 @@ public class HomeFragment extends Fragment implements View.OnClickListener
             case R.id.bind_device:
                 openActivity(BindActivity.class);
                 break;
+            case R.id.button2:
+                openActivity(InformationActivity.class);
+                break;
+            case R.id.button4:
+                openActivity(InfoActivity.class);
+                break;
             case R.id.button5:
                 openActivity(LuckydrawActivity.class);
                 break;
@@ -105,4 +116,6 @@ public class HomeFragment extends Fragment implements View.OnClickListener
         Intent it = new Intent(getActivity(), cls);
         startActivity(it);
     }
+
+
 }

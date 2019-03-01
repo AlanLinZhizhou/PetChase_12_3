@@ -52,7 +52,7 @@ public class CustomCarActivity extends BaseActivity {
         int strategy = 0;
         try {
             //再次强调，最后一个参数为true时代表多路径，否则代表单路径
-            strategy = mAMapNavi.strategyConvert(true, false, false, false, false);
+            strategy = mAMapNavi.strategyConvert(true, false, false, false, true);
         } catch (Exception e) {
             e.printStackTrace();
         }

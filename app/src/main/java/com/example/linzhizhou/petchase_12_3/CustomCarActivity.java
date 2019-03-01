@@ -1,5 +1,6 @@
 package com.example.linzhizhou.petchase_12_3;
 
+import android.content.Intent;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
 
@@ -13,6 +14,8 @@ import java.util.ArrayList;
 
 public class CustomCarActivity extends BaseActivity {
 
+    private double deviceJd;
+    private double deviceWd;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,7 +34,12 @@ public class CustomCarActivity extends BaseActivity {
         mAMapNaviView.setViewOptions(options);
 
         mWayPointList = new ArrayList();
-        mWayPointList.add(new NaviLatLng(32.183602, 118.699000));
+        Intent getJWd = getIntent();
+        String getJd = getJWd.getStringExtra("passjd");
+        String getWd = getJWd.getStringExtra("passwd");
+        deviceJd = Double.parseDouble(getJd);
+        deviceWd = Double.parseDouble(getWd);
+        mWayPointList.add(new NaviLatLng(deviceWd, deviceJd));
     }
 
     @Override

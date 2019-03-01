@@ -159,6 +159,8 @@ public class NavigateFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getActivity(), CustomCarActivity.class);
+                intent.putExtra("passjd",passjd);
+                intent.putExtra("passwd",passwd);
                 startActivity(intent);
             }
         });
@@ -177,6 +179,9 @@ public class NavigateFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getActivity(), BasicWalkNaviActivity.class);
+                intent.putExtra("passjd",passjd);
+                intent.putExtra("passwd",passwd);
+
                 startActivity(intent);
             }
         });

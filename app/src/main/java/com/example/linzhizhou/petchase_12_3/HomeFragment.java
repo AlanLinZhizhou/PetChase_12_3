@@ -47,6 +47,10 @@ public class HomeFragment extends Fragment implements View.OnClickListener
         ImageButton b7 = view.findViewById(R.id.button7);
         b7.setOnClickListener(this);
         ImageButton b8 = view.findViewById(R.id.button8);
+
+        ImageButton b9=view.findViewById(R.id.button81);
+        b9.setOnClickListener(this);
+
         setParams(width, b1);
         setParams(width, b2);
         setParams(width, b3);
@@ -55,6 +59,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener
         setParams(width, b6);
         setParams(width, b7);
         setParams(width, b8);
+        setParams(width, b9);
         return view;
     }
 
@@ -84,6 +89,11 @@ public class HomeFragment extends Fragment implements View.OnClickListener
                 break;
             case R.id.button7:
                 openActivity(DayActivity.class);
+                break;
+            case R.id.button81:
+                openActivity(RechargeActivity.class);
+                break;
+            default:
                 break;
         }
     }

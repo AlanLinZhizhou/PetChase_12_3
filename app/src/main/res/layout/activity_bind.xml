@@ -6,6 +6,7 @@
     android:fitsSystemWindows="true"
     tools:context=".BindActivity">
 
+
     <include
         android:id="@+id/layout"
         layout="@layout/layout_title"
@@ -19,10 +20,9 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:background="@color/colorPrimary"
-        android:text="确定"
+        android:text="返回"
         android:textColor="@android:color/white"
         android:textSize="18sp" />
-
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/recyclerView"

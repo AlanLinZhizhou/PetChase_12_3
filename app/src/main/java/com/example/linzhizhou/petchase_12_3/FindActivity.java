@@ -28,7 +28,7 @@ public class FindActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_find);
         ButterKnife.bind(this);
-        mLayoutTitle.setText("领养");
+        mLayoutTitle.setText("寻宠启示");
 
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
         mAdapter = new BaseAdapter<FindBean>(this, R.layout.item_find)

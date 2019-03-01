@@ -41,7 +41,7 @@
         android:layout_height="wrap_content"
         android:lineSpacingExtra="5dp"
         android:padding="15dp"
-        android:text="恭喜您已中奖：一袋猫粮！我们将在3-7个工作日内发出，请您准确填写收货地址，填写后不能更改。"
+        android:text="恭喜您已中奖，奖品由“宠物之家”提供，“宠物之家”将在3-7个工作日内发出奖品，请注意及时查收哦。"
         android:textColor="@android:color/darker_gray"
         android:textSize="15sp"
         app:layout_constraintLeft_toLeftOf="parent"

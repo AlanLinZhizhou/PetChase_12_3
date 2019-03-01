@@ -43,7 +43,7 @@ public class AgreeDetialActivity extends BaseActivity
     protected void initView(Bundle savedInstanceState)
     {
         super.initView(savedInstanceState);
-        mTopText.setText("有宠用户服务协议");
+        mTopText.setText("用户服务协议");
         mAgreeWeb.loadUrl(url_agree);
     }
 }

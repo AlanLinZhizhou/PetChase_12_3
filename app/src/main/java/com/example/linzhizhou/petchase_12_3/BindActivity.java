@@ -34,22 +34,27 @@ public class BindActivity extends AppCompatActivity
         ButterKnife.bind(this);
 
         mLayoutTitle.setText("绑定设备");
+
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
         mAdapter = new BaseAdapter<BindBean>(this, R.layout.item_bind)
+
         {
             @Override
+
             public void convert(BaseViewHolder holder, int position, BindBean data)
+
             {
                 holder.setText(data.getTitle(), R.id.item_title)
                         .setText(data.getDescript(), R.id.item_descript)
                         .setTextColor(data.isEditor() ? Color.BLACK : Color.parseColor("#aaaaaa"), R.id.item_descript);
                 EditText descript = holder.getView(R.id.item_descript);
                 descript.setEnabled(data.isEditor());
-                descript.setHint(data.isEditor() ? "请输入您的设备Sn号" : "");
             }
+
         };
         mAdapter.bindRecyclerView(mRecyclerView);
         mAdapter.setData(BindBean.getList(this));
+
     }
 
     @OnClick({R.id.layout_finish, R.id.action})
@@ -62,7 +67,7 @@ public class BindActivity extends AppCompatActivity
                 break;
             case R.id.action:
 //                Toast.makeText(this, getString(R.string.toast_bind), Toast.LENGTH_SHORT).show();
-                Toast.makeText(this, "绑定成功~", Toast.LENGTH_SHORT).show();
+               //Toast.makeText(this, "绑定成功~", Toast.LENGTH_SHORT).show();
                 finish();
                 break;
         }

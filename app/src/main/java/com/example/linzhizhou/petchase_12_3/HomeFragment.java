@@ -1,5 +1,6 @@
 package com.example.linzhizhou.petchase_12_3;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.icu.text.IDNA;
@@ -15,6 +16,11 @@ import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.widget.GridLayout;
 import android.widget.ImageButton;
+
+import com.example.linzhizhou.petchase_12_3.view.child.DepositFragment;
+import com.zhy.autolayout.AutoFrameLayout;
+
+import butterknife.Bind;
 
 public class HomeFragment extends Fragment implements View.OnClickListener
 {
@@ -55,6 +61,8 @@ public class HomeFragment extends Fragment implements View.OnClickListener
 
         ImageButton b9=view.findViewById(R.id.button81);
         b9.setOnClickListener(this);
+        ImageButton b10=view.findViewById(R.id.button41);
+        b10.setOnClickListener(this);
 
         setParams(width, b1);
         setParams(width, b2);
@@ -65,6 +73,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener
         setParams(width, b7);
         setParams(width, b8);
         setParams(width, b9);
+        setParams(width,b10);
         return view;
     }
 
@@ -104,9 +113,19 @@ public class HomeFragment extends Fragment implements View.OnClickListener
             case R.id.button81:
                 openActivity(RechargeActivity.class);
                 break;
+            case R.id.button41:
+                //DepositFragment df=new DepositFragment();
+                //FragmentManager fragmentManager=getFragmentManager();
+                //FragmentTransaction ft=fragmentManager.beginTransaction();
+                //ft.replace(R.id.fragment,new DepositFragment());
+                //ft.commit();
+                break;
             default:
                 break;
         }
+
+
+
     }
 
 
@@ -116,6 +135,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener
         Intent it = new Intent(getActivity(), cls);
         startActivity(it);
     }
+
 
 
 }

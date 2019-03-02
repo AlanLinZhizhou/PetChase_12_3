@@ -111,14 +111,6 @@ public class HomeFragment extends Fragment implements View.OnClickListener
                 openActivity(DayActivity.class);
                 break;
             case R.id.button81:
-                openActivity(RechargeActivity.class);
-                break;
-            case R.id.button41:
-                //DepositFragment df=new DepositFragment();
-                //FragmentManager fragmentManager=getFragmentManager();
-                //FragmentTransaction ft=fragmentManager.beginTransaction();
-                //ft.replace(R.id.fragment,new DepositFragment());
-                //ft.commit();
                 break;
             default:
                 break;

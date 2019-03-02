@@ -91,7 +91,6 @@
         <activity android:name=".FindActivity" />
         <activity android:name=".DayActivity" />
         <activity android:name=".EditDayActivity" />
-        <activity android:name=".RechargeActivity" />
         <activity android:name=".InformationActivity" />
         <activity android:name=".InfoActivity" />
         <activity android:name=".pet.ui.activity.AgreeDetialActivity" />

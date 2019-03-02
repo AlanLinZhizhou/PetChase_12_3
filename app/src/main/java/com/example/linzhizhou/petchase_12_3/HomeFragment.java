@@ -1,14 +1,10 @@
 package com.example.linzhizhou.petchase_12_3;
 
-import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
-import android.icu.text.IDNA;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -16,11 +12,6 @@ import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.widget.GridLayout;
 import android.widget.ImageButton;
-
-import com.example.linzhizhou.petchase_12_3.view.child.DepositFragment;
-import com.zhy.autolayout.AutoFrameLayout;
-
-import butterknife.Bind;
 
 public class HomeFragment extends Fragment implements View.OnClickListener
 {

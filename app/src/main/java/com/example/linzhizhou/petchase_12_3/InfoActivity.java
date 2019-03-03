@@ -41,7 +41,7 @@ public class InfoActivity extends AppCompatActivity {
 
                 holder.setText(infoBean.getTitle(), R.id.item_title)
                         .setText(infoBean.getDescript(), R.id.item_descript)
-                        .setTextColor(infoBean.isEditor() ? Color.BLACK : Color.parseColor("#aaaaaa"), R.id.item_descript);
+                        .setTextColor(R.id.item_descript,infoBean.isEditor() ? Color.BLACK : Color.parseColor("#aaaaaa"));
                 EditText descript = holder.getView(R.id.item_descript);
                 descript.setEnabled(infoBean.isEditor());
             }

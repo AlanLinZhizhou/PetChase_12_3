@@ -1,14 +1,10 @@
 package com.example.linzhizhou.petchase_12_3;
 
-import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
-import android.icu.text.IDNA;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -16,14 +12,19 @@ import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.widget.GridLayout;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 
-import com.example.linzhizhou.petchase_12_3.view.child.DepositFragment;
-import com.zhy.autolayout.AutoFrameLayout;
+import com.squareup.picasso.Picasso;
+import com.youth.banner.Banner;
 
-import butterknife.Bind;
+import java.util.Arrays;
+
 
 public class HomeFragment extends Fragment implements View.OnClickListener
 {
+
+    private Banner mBanner;
+
 
     @Override
     public void setMenuVisibility(boolean menuVisible)
@@ -59,10 +60,29 @@ public class HomeFragment extends Fragment implements View.OnClickListener
         b7.setOnClickListener(this);
         ImageButton b8 = view.findViewById(R.id.button8);
 
-        ImageButton b9=view.findViewById(R.id.button81);
+        ImageButton b9 = view.findViewById(R.id.button81);
         b9.setOnClickListener(this);
-        ImageButton b10=view.findViewById(R.id.button41);
+        ImageButton b10 = view.findViewById(R.id.button41);
         b10.setOnClickListener(this);
+        mBanner = view.findViewById(R.id.banner);
+        mBanner.setImageLoader(new com.youth.banner.loader.ImageLoader()
+        {
+            @Override
+            public void displayImage(Context context, Object path, ImageView imageView)
+            {
+                String data = (String) path;
+                Picasso.with(getActivity()).load(data).fit().centerCrop().into(imageView);
+            }
+        });
+        mBanner.setImages(Arrays.asList(new String[]{
+                "http://img.ivsky.com/img/tupian/pre/201808/29/cat-008.jpg",
+                "http://img.ivsky.com/img/tupian/pre/201806/17/swedish_vallhund-003.jpg",
+                "http://img.ivsky.com/img/tupian/pre/201808/01/golden_retriever-002.jpg",
+                "http://img.ivsky.com/img/tupian/pre/201809/09/maomai-005.jpg",
+                "http://img.ivsky.com/img/tupian/pre/201808/31/xuenarui-003.jpg",
+
+        }));
+        mBanner.start();
 
         setParams(width, b1);
         setParams(width, b2);
@@ -73,14 +93,14 @@ public class HomeFragment extends Fragment implements View.OnClickListener
         setParams(width, b7);
         setParams(width, b8);
         setParams(width, b9);
-        setParams(width,b10);
+        setParams(width, b10);
         return view;
     }
 
     private void setParams(int width, ImageButton b)
     {
         GridLayout.LayoutParams params = (GridLayout.LayoutParams) b.getLayoutParams();
-        params.width = width /5 - 22;
+        params.width = width / 5 - 22;
         b.setLayoutParams(params);
     }
 
@@ -111,19 +131,11 @@ public class HomeFragment extends Fragment implements View.OnClickListener
                 openActivity(DayActivity.class);
                 break;
             case R.id.button81:
-                openActivity(RechargeActivity.class);
-                break;
-            case R.id.button41:
-                //DepositFragment df=new DepositFragment();
-                //FragmentManager fragmentManager=getFragmentManager();
-                //FragmentTransaction ft=fragmentManager.beginTransaction();
-                //ft.replace(R.id.fragment,new DepositFragment());
-                //ft.commit();
+                openActivity(PayActivity.class);
                 break;
             default:
                 break;
         }
-
 
 
     }
@@ -135,7 +147,6 @@ public class HomeFragment extends Fragment implements View.OnClickListener
         Intent it = new Intent(getActivity(), cls);
         startActivity(it);
     }
-
 
 
 }

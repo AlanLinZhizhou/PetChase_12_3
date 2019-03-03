@@ -1,21 +1,17 @@
 com.lorentzos.flingswipe
-int attr SwipeFlingStyle 0x7f040001
-int attr max_visible 0x7f040002
-int attr min_adapter_stack 0x7f040003
-int attr rotation_degrees 0x7f040004
-int id frame 0x7f0c0001
-int id helloText 0x7f0c0002
-int id item_swipe_left_indicator 0x7f0c0003
-int id item_swipe_right_indicator 0x7f0c0004
-int id left 0x7f0c0005
-int id right 0x7f0c0006
-int layout activity_my 0x7f0f0001
-int layout buttons 0x7f0f0002
-int layout item 0x7f0f0003
-int string app_name 0x7f150001
-int style SwipeFling 0x7f160001
-int[] styleable SwipeFlingAdapterView { 0x7f040001, 0x7f040002, 0x7f040003, 0x7f040004 }
-int styleable SwipeFlingAdapterView_SwipeFlingStyle 0
-int styleable SwipeFlingAdapterView_max_visible 1
-int styleable SwipeFlingAdapterView_min_adapter_stack 2
-int styleable SwipeFlingAdapterView_rotation_degrees 3
+attr SwipeFlingStyle
+attr max_visible
+attr min_adapter_stack
+attr rotation_degrees
+id frame
+id helloText
+id item_swipe_left_indicator
+id item_swipe_right_indicator
+id left
+id right
+layout activity_my
+layout buttons
+layout item
+string app_name
+style SwipeFling
+styleable SwipeFlingAdapterView SwipeFlingStyle max_visible min_adapter_stack rotation_degrees

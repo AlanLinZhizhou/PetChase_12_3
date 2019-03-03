@@ -1,5 +1,6 @@
 package com.example.linzhizhou.petchase_12_3;
 
+import android.content.Context;
 import android.support.annotation.ColorInt;
 import android.support.annotation.DimenRes;
 import android.support.annotation.IdRes;
@@ -24,15 +25,15 @@ public class BaseViewHolder extends RecyclerView.ViewHolder
     private ImageUtils mUtils;
 
 
-    private BaseViewHolder(AppCompatActivity activity, View iteview)
+    private BaseViewHolder(Context context, View iteview)
     {
         super(iteview);
         ButterKnife.bind(this, iteview);
         views = new SparseArray<>();
-        mUtils = new ImageUtils(activity);
+        mUtils = new ImageUtils(context);
     }
 
-    public static BaseViewHolder getViewHolder(View iteview, AppCompatActivity activity)
+    public static BaseViewHolder getViewHolder(View iteview, Context activity)
     {
         return new BaseViewHolder(activity, iteview);
     }
@@ -215,13 +216,10 @@ public class BaseViewHolder extends RecyclerView.ViewHolder
      * @param textColor The text color (not a resource id).
      * @return The BaseViewHolder for chaining.
      */
-    public BaseViewHolder setTextColor(@ColorInt int textColor, @IdRes int viewId)
+    public BaseViewHolder setTextColor(@IdRes int viewId, @ColorInt int textColor)
     {
         TextView view = getView(viewId);
-        if (view != null)
-        {
-            view.setTextColor(textColor);
-        }
+        view.setTextColor(textColor);
         return this;
     }
 

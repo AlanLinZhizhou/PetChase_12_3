@@ -21,9 +21,7 @@
             android:layout_alignParentRight="true"
             android:layout_marginBottom="0dp"
             android:background="#00000000"
-            app:srcCompat="@drawable/ic_personal_tab_custom_topic"
-
-            />
+            app:srcCompat="@drawable/ic_personal_tab_custom_topic" />
 
         <ImageView
             android:id="@+id/imageView"
@@ -40,8 +38,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="#FFFFFF"
-
-        >
+        android:visibility="gone">
 
         <ImageButton
             android:id="@+id/head_pic"
@@ -86,6 +83,22 @@
 
     </RelativeLayout>
 
+
+    <com.youth.banner.Banner
+        android:id="@+id/banner"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        app:delay_time="3500"
+        app:indicator_drawable_selected="@drawable/shape_home_banner_selected"
+        app:indicator_drawable_unselected="@drawable/shape_home_banner_unselected"
+        app:indicator_height="@dimen/dp_6"
+        app:indicator_margin="@dimen/dp_6"
+        app:indicator_width="@dimen/dp_6"
+        app:is_auto_play="true"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <View
         android:id="@+id/view1"
         android:layout_width="match_parent"
@@ -110,20 +123,11 @@
             android:ems="4"
             android:focusable="false"
             android:inputType="textPersonName"
-            android:text="我的宠物"
+
             android:textColor="@color/light_grey"
             android:textSize="16sp" />
 
-        <ImageButton
-            android:id="@+id/more_pet"
-            android:layout_width="wrap_content"
-            android:layout_height="22dp"
-            android:layout_marginStart="139dp"
-            android:layout_marginTop="0dp"
-            android:layout_marginBottom="0dp"
-            android:background="#00000000"
-            android:scaleType="centerInside"
-            app:srcCompat="@drawable/chicken" />
+
 
     </RelativeLayout>
 
@@ -159,9 +163,9 @@
             android:layout_height="wrap_content"
             android:layout_row="1"
             android:layout_column="0"
-            android:textSize="12sp"
             android:layout_gravity="center_horizontal"
-            android:text="绑定设备" />
+            android:text="绑定设备"
+            android:textSize="12sp" />
 
         <ImageButton
             android:id="@+id/button2"
@@ -180,8 +184,8 @@
             android:layout_row="1"
             android:layout_column="1"
             android:layout_gravity="center_horizontal"
-            android:textSize="12sp"
-            android:text="小科普" />
+            android:text="小科普"
+            android:textSize="12sp" />
 
         <ImageButton
             android:id="@+id/button3"
@@ -199,19 +203,19 @@
             android:layout_height="wrap_content"
             android:layout_row="1"
             android:layout_column="2"
-            android:textSize="12sp"
             android:layout_gravity="center_horizontal"
-            android:text="寻宠启示" />
+            android:text="寻宠启示"
+            android:textSize="12sp" />
 
         <ImageButton
-        android:id="@+id/button4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_row="0"
-        android:layout_column="3"
-        android:layout_gravity="center"
-        android:background="#00000000"
-        app:srcCompat="@drawable/device_info" />
+            android:id="@+id/button4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_row="0"
+            android:layout_column="3"
+            android:layout_gravity="center"
+            android:background="#00000000"
+            app:srcCompat="@drawable/device_info" />
 
         <TextView
             android:id="@+id/text4"
@@ -219,9 +223,9 @@
             android:layout_height="wrap_content"
             android:layout_row="1"
             android:layout_column="3"
-            android:textSize="12sp"
             android:layout_gravity="center_horizontal"
-            android:text="设备信息" />
+            android:text="设备信息"
+            android:textSize="12sp" />
 
         <ImageButton
             android:id="@+id/button41"
@@ -239,9 +243,9 @@
             android:layout_height="wrap_content"
             android:layout_row="1"
             android:layout_column="4"
-            android:textSize="12sp"
             android:layout_gravity="center_horizontal"
-            android:text="安全区" />
+            android:text="安全区"
+            android:textSize="12sp" />
 
         <ImageButton
             android:id="@+id/button5"
@@ -260,8 +264,8 @@
             android:layout_row="3"
             android:layout_column="0"
             android:layout_gravity="center_horizontal"
-            android:textSize="12sp"
-            android:text="抽奖" />
+            android:text="抽奖"
+            android:textSize="12sp" />
 
         <ImageButton
             android:id="@+id/button6"
@@ -279,9 +283,9 @@
             android:layout_height="wrap_content"
             android:layout_row="3"
             android:layout_column="1"
-            android:textSize="12sp"
             android:layout_gravity="center_horizontal"
-            android:text="联系我们" />
+            android:text="联系我们"
+            android:textSize="12sp" />
 
         <ImageButton
             android:id="@+id/button7"
@@ -300,8 +304,8 @@
             android:layout_row="3"
             android:layout_column="2"
             android:layout_gravity="center_horizontal"
-            android:textSize="12sp"
-            android:text="疫苗规划" />
+            android:text="疫苗规划"
+            android:textSize="12sp" />
 
         <ImageButton
             android:id="@+id/button81"
@@ -319,9 +323,9 @@
             android:layout_height="wrap_content"
             android:layout_row="3"
             android:layout_column="3"
-            android:textSize="12sp"
             android:layout_gravity="center_horizontal"
-            android:text="充值" />
+            android:text="充值"
+            android:textSize="12sp" />
 
         <ImageButton
             android:id="@+id/button8"
@@ -339,9 +343,9 @@
             android:layout_height="wrap_content"
             android:layout_row="3"
             android:layout_column="4"
-            android:textSize="12sp"
             android:layout_gravity="center_horizontal"
-            android:text="更多" />
+            android:text="更多"
+            android:textSize="12sp" />
     </GridLayout>
 
 
@@ -366,20 +370,10 @@
             android:ems="4"
             android:focusable="false"
             android:inputType="textPersonName"
-            android:text="我的信息"
+
             android:textColor="@color/light_grey"
             android:textSize="16sp" />
 
-        <ImageButton
-            android:id="@+id/editMyInfo"
-            android:layout_width="22dp"
-            android:layout_height="22dp"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginStart="139dp"
-            android:background="#00000000"
-            android:scaleType="fitCenter"
-            app:srcCompat="@drawable/pen2" />
 
     </RelativeLayout>
 

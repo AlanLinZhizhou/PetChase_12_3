@@ -46,7 +46,7 @@ public class BindActivity extends AppCompatActivity
             {
                 holder.setText(data.getTitle(), R.id.item_title)
                         .setText(data.getDescript(), R.id.item_descript)
-                        .setTextColor(data.isEditor() ? Color.BLACK : Color.parseColor("#aaaaaa"), R.id.item_descript);
+                        .setTextColor(R.id.item_descript,data.isEditor() ? Color.BLACK : Color.parseColor("#aaaaaa"));
                 EditText descript = holder.getView(R.id.item_descript);
                 descript.setEnabled(data.isEditor());
             }

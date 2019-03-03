@@ -78,5 +78,4 @@ dependencies {
 
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation project(':library')
-    implementation 'com.jakewharton:butterknife:5.1.2'
 }

@@ -17,4 +17,6 @@
     <color name="colorWhite">#ffffff</color>
     <color name="colorF0">#f0f0f0</color>
     <color name="color9">#999999</color>
+    <color name="colorLine">#e1e1e1</color>
+    <color name="a_common_bg">#5ed1c2</color>
 </resources>

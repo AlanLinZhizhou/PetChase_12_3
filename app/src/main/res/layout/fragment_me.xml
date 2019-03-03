@@ -139,7 +139,7 @@
                 android:gravity="center"
                 android:orientation="vertical">
 
-                <ImageButton
+                <ImageView
                     android:id="@+id/qiandao"
                     android:layout_width="60px"
                     android:layout_height="52px"
@@ -171,7 +171,7 @@
                 android:gravity="center"
                 android:orientation="vertical">
 
-                <ImageButton
+                <ImageView
                     android:id="@+id/liuchong"
                     android:layout_width="60px"
                     android:layout_height="52px"
@@ -203,7 +203,7 @@
                 android:gravity="center"
                 android:orientation="vertical">
 
-                <ImageButton
+                <ImageView
                     android:id="@+id/xiaoxi"
                     android:layout_width="60px"
                     android:layout_height="52px"
@@ -356,7 +356,7 @@
                 android:gravity="center"
                 android:orientation="vertical">
 
-                <ImageButton
+                <ImageView
                     android:id="@+id/chongwu"
                     android:layout_width="74px"
                     android:layout_height="58px"
@@ -386,7 +386,7 @@
                 android:gravity="center"
                 android:orientation="vertical">
 
-                <ImageButton
+                <ImageView
                     android:id="@+id/chongyou"
                     android:layout_width="74px"
                     android:layout_height="58px"
@@ -416,7 +416,7 @@
                 android:gravity="center"
                 android:orientation="vertical">
 
-                <ImageButton
+                <ImageView
                     android:id="@+id/shequ"
                     android:layout_width="74px"
                     android:layout_height="58px"
@@ -446,7 +446,7 @@
                 android:gravity="center"
                 android:orientation="vertical">
 
-                <ImageButton
+                <ImageView
                     android:id="@+id/shoucang"
                     android:layout_width="74px"
                     android:layout_height="58px"
@@ -499,7 +499,7 @@
                 android:gravity="center"
                 android:orientation="vertical">
 
-                <ImageButton
+                <ImageView
                     android:id="@+id/zhanghumingxi"
                     android:layout_width="62px"
                     android:layout_height="69px"
@@ -531,7 +531,7 @@
                 android:gravity="center"
                 android:orientation="vertical">
 
-                <ImageButton
+                <ImageView
                     android:id="@+id/gexingzhuangban"
                     android:layout_width="62px"
                     android:layout_height="69px"
@@ -561,7 +561,7 @@
                 android:gravity="center"
                 android:orientation="vertical">
 
-                <ImageButton
+                <ImageView
                     android:id="@+id/shezhi"
                     android:layout_width="72px"
                     android:layout_height="70px"
@@ -593,7 +593,7 @@
                 android:gravity="center"
                 android:orientation="vertical">
 
-                <ImageButton
+                <ImageView
                     android:id="@+id/yijianfankui"
                     android:layout_width="62px"
                     android:layout_height="69px"

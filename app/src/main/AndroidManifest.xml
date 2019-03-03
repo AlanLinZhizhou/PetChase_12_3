@@ -91,7 +91,6 @@
         <activity android:name=".FindActivity" />
         <activity android:name=".DayActivity" />
         <activity android:name=".EditDayActivity" />
-        <activity android:name=".RechargeActivity" />
         <activity android:name=".InformationActivity" />
         <activity android:name=".InfoActivity" />
         <activity android:name=".pet.ui.activity.AgreeDetialActivity" />
@@ -99,6 +98,7 @@
         <activity android:name=".pet.ui.activity.MissActivity" />
         <activity android:name=".pet.ui.activity.PetMsgActivity" />
         <activity android:name=".pet.ui.activity.RegisterActivity" />
+        <activity android:name=".PayActivity" />
     </application>
 
 </manifest>

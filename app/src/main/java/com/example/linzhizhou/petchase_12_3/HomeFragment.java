@@ -20,6 +20,7 @@ import com.youth.banner.Banner;
 import java.util.Arrays;
 
 
+
 public class HomeFragment extends Fragment implements View.OnClickListener
 {
 
@@ -132,6 +133,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener
                 break;
             case R.id.button81:
                 openActivity(PayActivity.class);
+
                 break;
             default:
                 break;

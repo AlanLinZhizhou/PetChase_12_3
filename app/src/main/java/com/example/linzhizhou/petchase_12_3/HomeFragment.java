@@ -16,6 +16,7 @@ import android.widget.ImageView;
 
 import com.squareup.picasso.Picasso;
 import com.youth.banner.Banner;
+import com.youth.banner.BannerConfig;
 
 import java.util.Arrays;
 

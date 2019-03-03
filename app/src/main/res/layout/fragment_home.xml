@@ -97,7 +97,9 @@
         app:is_auto_play="true"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="@drawable/shape_yuanjiao"
+        />
 
     <View
         android:id="@+id/view1"

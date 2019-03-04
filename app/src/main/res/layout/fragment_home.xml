@@ -4,85 +4,117 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#FFFFFF"
     android:orientation="vertical"
     android:padding="0dp"
-    android:background="#FFFFFF"
     tools:context=".MainActivity">
 
-    <RelativeLayout
-        android:id="@+id/r1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/colorPrimary">
-
-        <ImageButton
-            android:id="@+id/settings"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:layout_marginBottom="0dp"
-            android:background="#00000000"
-            app:srcCompat="@drawable/ic_personal_tab_custom_topic" />
-
-        <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="match_parent"
-            android:layout_height="33.2dp"
-            android:layout_below="@id/settings"
-            android:layout_alignParentLeft="true"
-            app:srcCompat="@drawable/bar3" />
-    </RelativeLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="15dp"
-        android:orientation="vertical"
-        />
-    <LinearLayout
-        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@drawable/home_background2"
         android:orientation="vertical">
-    <android.support.v7.widget.SearchView
-        android:id="@+id/s1"
-        android:layout_width="match_parent"
-        android:layout_height="25dp"
-        android:autofillHints="输入用户、帖子名称"
-        android:background="@drawable/shape_yuanjiao"
-        android:layout_gravity="center_horizontal"
-        />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:layout_width="150dp"
+                    android:layout_height="30dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginLeft="5dp"
+                    android:scaleType="centerInside"
+                    android:background="@drawable/home_title2" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="0dp"
+
+                    android:background="@drawable/ic_personal_tab_custom_topic2"
+                    android:layout_toLeftOf="@+id/hometitle2"
+                    />
+                <TextView
+                    android:id="@+id/hometitle2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#FFFFFF"
+                    android:gravity="center_vertical"
+                    android:layout_alignParentRight="true"
+                    android:textStyle="bold"
+                    android:textSize="15sp"
+                    android:text="  智能生活   "
+                    />
+
+            </RelativeLayout>
+
+
+        </LinearLayout>
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="   别无二致 的 的"
+
+            android:textColor="#ffffff" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="9dp"
+            android:orientation="vertical">
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <android.support.v7.widget.SearchView
+                android:id="@+id/s1"
+                android:layout_width="match_parent"
+                android:layout_height="25dp"
+                android:layout_gravity="center_horizontal"
+                android:autofillHints="输入用户、帖子名称"
+                android:background="@drawable/shape_yuanjiao" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="12dp"
+            android:orientation="vertical" />
+
+
+        <com.youth.banner.Banner
+            android:id="@+id/banner"
+            android:layout_width="280dp"
+            android:layout_height="100dp"
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/shape_yuanjiao"
+            app:delay_time="3500"
+            app:indicator_drawable_selected="@drawable/shape_home_banner_selected"
+            app:indicator_drawable_unselected="@drawable/shape_home_banner_unselected"
+            app:indicator_height="@dimen/dp_6"
+            app:indicator_margin="@dimen/dp_6"
+            app:indicator_width="@dimen/dp_6"
+            app:is_auto_play="true"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
     </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="12dp"
-        android:orientation="vertical"
-        />
 
-
-
-
-
-    <com.youth.banner.Banner
-        android:id="@+id/banner"
-        android:layout_width="280dp"
-        android:layout_height="100dp"
-        android:layout_gravity="center_horizontal"
-        app:delay_time="3500"
-        app:indicator_drawable_selected="@drawable/shape_home_banner_selected"
-        app:indicator_drawable_unselected="@drawable/shape_home_banner_unselected"
-        app:indicator_height="@dimen/dp_6"
-        app:indicator_margin="@dimen/dp_6"
-        app:indicator_width="@dimen/dp_6"
-        app:is_auto_play="true"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:background="@drawable/shape_yuanjiao"
-        />
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="15dp"
-        android:orientation="vertical"
-        />
+        android:orientation="vertical" />
+
     <View
         android:id="@+id/view1"
         android:layout_width="match_parent"
@@ -313,7 +345,6 @@
         android:layout_width="match_parent"
         android:layout_height="1dip"
         android:background="@color/grey_line" />
-
 
 
     <View

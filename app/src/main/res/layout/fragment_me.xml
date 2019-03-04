@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.zhy.autolayout.AutoLinearLayout
+<ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -7,6 +7,7 @@
     android:fillViewport="true"
     android:orientation="vertical"
     android:scrollbars="none">
+
 
     <com.zhy.autolayout.AutoLinearLayout
         android:layout_width="match_parent"
@@ -37,10 +38,24 @@
         </com.zhy.autolayout.AutoRelativeLayout>
 
 
+        <com.zhy.autolayout.AutoLinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimary">
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="match_parent"
+                android:layout_height="33.2dp"
+                android:layout_alignParentLeft="true"
+                android:src="@drawable/bar3" />
+        </com.zhy.autolayout.AutoLinearLayout>
+
+
         <!--头像  用户信息-->
         <com.zhy.autolayout.AutoRelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="270px"
             android:background="@color/colorWhite">
 
             <ImageView
@@ -113,14 +128,15 @@
 
             <ImageButton
                 android:id="@+id/xiugai"
-                android:layout_width="22px"
-                android:layout_height="42px"
+                android:layout_width="35px"
+                android:layout_height="55px"
                 android:layout_alignParentRight="true"
                 android:layout_centerVertical="true"
-                android:layout_marginRight="18dp"
+                android:layout_marginRight="43px"
                 android:adjustViewBounds="true"
                 android:scaleType="centerCrop"
-                android:src="@drawable/icon_point_newpaget" />
+                android:background="@drawable/icon_point_newpaget"/>
+
 
         </com.zhy.autolayout.AutoRelativeLayout>
 
@@ -225,7 +241,7 @@
         <!--宠物，优惠券 礼物-->
         <com.zhy.autolayout.AutoLinearLayout
             android:layout_width="match_parent"
-            android:layout_height="294px"
+            android:layout_height="290px"
             android:layout_marginTop="2px"
             android:background="@color/colorWhite"
             android:weightSum="4">
@@ -614,4 +630,4 @@
 
     </com.zhy.autolayout.AutoLinearLayout>
 
-</com.zhy.autolayout.AutoLinearLayout>
+</ScrollView>

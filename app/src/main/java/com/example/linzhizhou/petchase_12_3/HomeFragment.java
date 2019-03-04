@@ -82,11 +82,10 @@ public class HomeFragment extends Fragment implements View.OnClickListener
         });
         mBanner.setImages(Arrays.asList(new String[]{
                 "http://img.ivsky.com/img/tupian/pre/201808/29/cat-008.jpg",
-                "http://img.ivsky.com/img/tupian/pre/201806/17/swedish_vallhund-003.jpg",
-                "http://img.ivsky.com/img/tupian/pre/201808/01/golden_retriever-002.jpg",
-                "http://img.ivsky.com/img/tupian/pre/201809/09/maomai-005.jpg",
-                "http://img.ivsky.com/img/tupian/pre/201808/31/xuenarui-003.jpg",
-
+                "http://img.ivsky.com/img/tupian/pre/201808/01/golden_retriever-008.jpg",
+                "http://img.ivsky.com/img/tupian/pre/201803/18/xiaonaigou-004.jpg",
+                "http://img.ivsky.com/img/tupian/pre/201101/21/jiating_chongwumao-032.jpg",
+                "http://img.ivsky.com/img/tupian/pre/201101/21/jiating_chongwumao-021.jpg"
         }));
         mBanner.start();
 

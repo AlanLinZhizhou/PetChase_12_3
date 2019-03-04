@@ -13,9 +13,12 @@ import android.view.WindowManager;
 import android.widget.GridLayout;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.support.v7.widget.SearchView;
+import android.widget.LinearLayout;
 
 import com.squareup.picasso.Picasso;
 import com.youth.banner.Banner;
+import com.youth.banner.BannerConfig;
 
 import java.util.Arrays;
 
@@ -65,6 +68,8 @@ public class HomeFragment extends Fragment implements View.OnClickListener
         b9.setOnClickListener(this);
         ImageButton b10 = view.findViewById(R.id.button41);
         b10.setOnClickListener(this);
+        SearchView s1=view.findViewById(R.id.s1);
+        //s1.setOnCloseListener(this);
         mBanner = view.findViewById(R.id.banner);
         mBanner.setImageLoader(new com.youth.banner.loader.ImageLoader()
         {
@@ -95,6 +100,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener
         setParams(width, b8);
         setParams(width, b9);
         setParams(width, b10);
+        setParams2(width,s1);
         return view;
     }
 
@@ -103,6 +109,14 @@ public class HomeFragment extends Fragment implements View.OnClickListener
         GridLayout.LayoutParams params = (GridLayout.LayoutParams) b.getLayoutParams();
         params.width = width / 5 - 22;
         b.setLayoutParams(params);
+    }
+    private void setParams2(int width, SearchView b)
+    {
+        //GridLayout.LayoutParams params = (GridLayout.LayoutParams) b.getLayoutParams();
+        LinearLayout.LayoutParams params=(LinearLayout.LayoutParams)b.getLayoutParams();
+        params.width=width-40;
+        b.setLayoutParams(params);
+
     }
 
     @Override

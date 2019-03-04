@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="0dp"
+    android:background="#FFFFFF"
     tools:context=".MainActivity">
 
     <RelativeLayout
@@ -32,62 +33,39 @@
             app:srcCompat="@drawable/bar3" />
     </RelativeLayout>
 
-
-    <RelativeLayout
-        android:id="@+id/r2"
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="15dp"
+        android:orientation="vertical"
+        />
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#FFFFFF"
-        android:visibility="gone">
-
-        <ImageButton
-            android:id="@+id/head_pic"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:layout_marginBottom="15dp"
-            android:background="#00000000"
-            app:srcCompat="@drawable/head_icon2" />
-
-        <TextView
-            android:id="@+id/nickname"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-
-            android:layout_alignParentTop="true"
-            android:layout_marginStart="126dp"
-            android:layout_marginTop="13dp"
-
-            android:inputType="textPersonName"
-            android:text="TestUser1"
-            android:textSize="20sp" />
-
-        <ImageView
-            android:id="@+id/eye"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/nickname"
-            android:layout_alignLeft="@+id/nickname"
-            app:srcCompat="@drawable/design_ic_visibility" />
-
-        <TextView
-            android:id="@+id/greet_user"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/nickname"
-            android:layout_toRightOf="@+id/eye"
-            android:text="尚未开通会员>"
-            android:textSize="18sp" />
+        android:orientation="vertical">
+    <android.support.v7.widget.SearchView
+        android:id="@+id/s1"
+        android:layout_width="match_parent"
+        android:layout_height="25dp"
+        android:autofillHints="输入用户、帖子名称"
+        android:background="@drawable/shape_yuanjiao"
+        android:layout_gravity="center_horizontal"
+        />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="12dp"
+        android:orientation="vertical"
+        />
 
 
-    </RelativeLayout>
+
 
 
     <com.youth.banner.Banner
         android:id="@+id/banner"
-        android:layout_width="match_parent"
-        android:layout_height="200dp"
+        android:layout_width="280dp"
+        android:layout_height="100dp"
+        android:layout_gravity="center_horizontal"
         app:delay_time="3500"
         app:indicator_drawable_selected="@drawable/shape_home_banner_selected"
         app:indicator_drawable_unselected="@drawable/shape_home_banner_unselected"
@@ -97,8 +75,14 @@
         app:is_auto_play="true"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="@drawable/shape_yuanjiao"
+        />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="15dp"
+        android:orientation="vertical"
+        />
     <View
         android:id="@+id/view1"
         android:layout_width="match_parent"

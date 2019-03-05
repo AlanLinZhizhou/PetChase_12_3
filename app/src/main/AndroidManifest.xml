@@ -98,6 +98,7 @@
         <activity android:name=".pet.ui.activity.MissActivity" />
         <activity android:name=".pet.ui.activity.PetMsgActivity" />
         <activity android:name=".pet.ui.activity.RegisterActivity" />
+        <activity android:name=".pet.ui.activity.MeMsgActivity"/>
         <activity android:name=".PayActivity" />
     </application>
 

@@ -8,7 +8,9 @@
     <FrameLayout
         android:id="@+id/homeContent"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="60dp"
+        >
 
     </FrameLayout>
 
@@ -16,6 +18,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
+        android:background="#ffffff"
         android:orientation="vertical">
 
         <View

@@ -14,6 +14,12 @@ import android.widget.TextView;
 
 import com.example.linzhizhou.petchase_12_3.MainActivity;
 import com.example.linzhizhou.petchase_12_3.R;
+import com.tckj.zyfsdk.ZYFSdk;
+import com.tckj.zyfsdk.entity.BaseEntity;
+import com.tckj.zyfsdk.entity.CodeEntity;
+import com.tckj.zyfsdk.http.zhttp.listener.ZYFGetAuthCodeListener;
+import com.tckj.zyfsdk.http.zhttp.listener.ZYFRegisterListener;
+
 
 import butterknife.Bind;
 import butterknife.OnClick;
@@ -74,6 +80,18 @@ public class RegisterActivity extends BaseActivity implements TextWatcher
                 break;
             case R.id.code_nums://获取验证码，显示倒计时
                 mTimer.start();
+                mRegisterPhone.getText();//手机号
+                ZYFSdk.getInstance().getAuthCode( mRegisterPhone.getText().toString(), new ZYFGetAuthCodeListener() {
+                    @Override
+                    public void onComplete(CodeEntity codeEntity) {
+                        codeEntity.getRtData();
+                    }
+
+                    @Override
+                    public void onError(Exception e) {
+//                        mRegisterPhone.setText(mRegisterPhone.getText()+e.toString());
+                    }
+                });
                 break;
             case R.id.register_btn://注册成功并登录，到首页
                 startActivity(new Intent(this, MainActivity.class));

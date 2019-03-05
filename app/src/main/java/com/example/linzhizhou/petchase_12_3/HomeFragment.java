@@ -2,9 +2,12 @@ package com.example.linzhizhou.petchase_12_3;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.res.AssetManager;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,6 +18,8 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.support.v7.widget.SearchView;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
+import android.widget.TextView;
 
 import com.squareup.picasso.Picasso;
 import com.youth.banner.Banner;
@@ -68,7 +73,20 @@ public class HomeFragment extends Fragment implements View.OnClickListener
         b9.setOnClickListener(this);
         ImageButton b10 = view.findViewById(R.id.button41);
         b10.setOnClickListener(this);
+        //尝试更改轮播圆角背景
+        ViewPager viewPager=view.findViewById(R.id.viewpager);
+        viewPager.setBackground(getResources().getDrawable(R.drawable.shape_yuanjiao));
+
+        ImageView btmLinea=view.findViewById(R.id.btm_img);
+        RelativeLayout btmL=view.findViewById(R.id.btmLinea);
         SearchView s1=view.findViewById(R.id.s1);
+        //设置字体
+        LinearLayout bl=view.findViewById(R.id.bannerLinear);
+        TextView tv=view.findViewById(R.id.tv);
+        AssetManager mgr=getActivity().getAssets();
+        Typeface tf=Typeface.createFromAsset(mgr, "fonts/lolicat.ttf");
+        tv.setTypeface(tf);
+
         //s1.setOnCloseListener(this);
         mBanner = view.findViewById(R.id.banner);
         mBanner.setImageLoader(new com.youth.banner.loader.ImageLoader()
@@ -89,6 +107,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener
         }));
         mBanner.start();
 
+       // 动态设置各个框的宽度
         setParams(width, b1);
         setParams(width, b2);
         setParams(width, b3);
@@ -99,7 +118,12 @@ public class HomeFragment extends Fragment implements View.OnClickListener
         setParams(width, b8);
         setParams(width, b9);
         setParams(width, b10);
+        //动态设置搜索框的宽度
         setParams2(width,s1);
+        //动态设置gridview的背景宽度
+        setParams3(width,bl);
+        setParams4(width,btmLinea);
+//        setParams5(height,btmL);
         return view;
     }
 
@@ -113,11 +137,35 @@ public class HomeFragment extends Fragment implements View.OnClickListener
     {
         //GridLayout.LayoutParams params = (GridLayout.LayoutParams) b.getLayoutParams();
         LinearLayout.LayoutParams params=(LinearLayout.LayoutParams)b.getLayoutParams();
-        params.width=width-40;
+        params.width=width-110;
         b.setLayoutParams(params);
-
+//        int a=0;
     }
 
+
+    private void setParams3(int width, LinearLayout b)
+    {
+        //GridLayout.LayoutParams params = (GridLayout.LayoutParams) b.getLayoutParams();
+        LinearLayout.LayoutParams params=(LinearLayout.LayoutParams)b.getLayoutParams();
+        params.width=width-110;
+        b.setLayoutParams(params);
+//        int a=0;
+    }
+    private void setParams4(int width, ImageView b)
+    {
+        //GridLayout.LayoutParams params = (GridLayout.LayoutParams) b.getLayoutParams();
+        RelativeLayout.LayoutParams params=(RelativeLayout.LayoutParams)b.getLayoutParams();
+        params.width=width-110;
+        b.setLayoutParams(params);
+//        int a=0;
+    }
+//    private void setParams5(int height, LinearLayout b)
+//    {
+//        //GridLayout.LayoutParams params = (GridLayout.LayoutParams) b.getLayoutParams();
+//        LinearLayout.LayoutParams params=(LinearLayout.LayoutParams)b.getLayoutParams();
+//        params.height=height;
+//        b.setLayoutParams(params);
+//    }
     @Override
     public void onClick(View view)
     {

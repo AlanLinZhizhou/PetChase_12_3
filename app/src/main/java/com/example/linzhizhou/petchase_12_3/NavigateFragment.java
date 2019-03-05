@@ -4,6 +4,8 @@ import android.Manifest;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.content.res.AssetManager;
+import android.graphics.Typeface;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
@@ -102,6 +104,12 @@ public class NavigateFragment extends Fragment {
         mapView = view.findViewById(R.id.fragment_map);
         mapView.onCreate(savedInstanceState);
         init();
+        TextView tv2=view.findViewById(R.id.tv2);
+        TextView tv3=view.findViewById(R.id.tv3);
+        AssetManager mgr=getActivity().getAssets();
+        Typeface tf=Typeface.createFromAsset(mgr, "fonts/lolicat.ttf");
+        tv2.setTypeface(tf);
+        tv3.setTypeface(tf);
         //给手机位置标点
         requestPermission();
         getLocationInfo();
@@ -126,7 +134,7 @@ public class NavigateFragment extends Fragment {
                 MarkerOptions markerOptions = new MarkerOptions();
                 markerOptions.position(latLng);
                 //设置自定义图标
-                markerOptions.icon(BitmapDescriptorFactory.fromResource(R.drawable.head_icon2));
+                markerOptions.icon(BitmapDescriptorFactory.fromResource(R.drawable.walk_navi));
                 Marker marker = aMap.addMarker(markerOptions);
                 aMap.moveCamera(cu);
             }

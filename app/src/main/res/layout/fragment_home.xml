@@ -13,7 +13,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/home_background2"
+        android:background="@drawable/home_background7"
         android:orientation="vertical">
 
         <LinearLayout
@@ -25,33 +25,44 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
-                <ImageView
-                    android:layout_width="150dp"
-                    android:layout_height="30dp"
+                <TextView
+                    android:id="@+id/tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:layout_alignParentTop="true"
                     android:layout_marginLeft="5dp"
-                    android:scaleType="centerInside"
-                    android:background="@drawable/home_title2" />
+                    android:fontFamily="serif"
+                    android:text="  宠物之家"
+                    android:textColor="#ffffff"
+                    android:textSize="22sp"
+                    android:textStyle="italic|bold" />
+                <!--<ImageView-->
+                <!--android:layout_width="150dp"-->
+                <!--android:layout_height="30dp"-->
+                <!--android:layout_alignParentTop="true"-->
+                <!--android:layout_marginLeft="5dp"-->
+                <!--android:background="@drawable/home_title2"-->
+                <!--android:scaleType="centerInside" />-->
 
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="0dp"
+                    android:layout_marginTop="10dp"
 
-                    android:background="@drawable/ic_personal_tab_custom_topic2"
                     android:layout_toLeftOf="@+id/hometitle2"
-                    />
+                    android:background="@drawable/ic_personal_tab_custom_topic2" />
+
                 <TextView
                     android:id="@+id/hometitle2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textColor="#FFFFFF"
-                    android:gravity="center_vertical"
                     android:layout_alignParentRight="true"
-                    android:textStyle="bold"
-                    android:textSize="15sp"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center_vertical"
                     android:text="  智能生活   "
-                    />
+                    android:textColor="#FFFFFF"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
 
             </RelativeLayout>
 
@@ -62,9 +73,9 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="   别无二致 的 的"
-
-            android:textColor="#ffffff" />
+            android:text="        众里寻它     千百度"
+            android:textColor="#ffffff"
+            android:textSize="11sp" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -72,6 +83,7 @@
             android:orientation="vertical">
 
         </LinearLayout>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -92,22 +104,31 @@
             android:orientation="vertical" />
 
 
-        <com.youth.banner.Banner
-            android:id="@+id/banner"
-            android:layout_width="280dp"
-            android:layout_height="100dp"
+        <LinearLayout
+            android:id="@+id/bannerLinear"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:background="@drawable/shape_yuanjiao"
-            app:delay_time="3500"
-            app:indicator_drawable_selected="@drawable/shape_home_banner_selected"
-            app:indicator_drawable_unselected="@drawable/shape_home_banner_unselected"
-            app:indicator_height="@dimen/dp_6"
-            app:indicator_margin="@dimen/dp_6"
-            app:indicator_width="@dimen/dp_6"
-            app:is_auto_play="true"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:background="@drawable/shape_yuanjiao2"
+            android:orientation="vertical">
+
+            <com.youth.banner.Banner
+                android:id="@+id/banner"
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:layout_gravity="center_horizontal"
+                android:background="@drawable/shape_yuanjiao"
+                app:delay_time="3500"
+                app:indicator_drawable_selected="@drawable/shape_home_banner_selected"
+                app:indicator_drawable_unselected="@drawable/shape_home_banner_unselected"
+                app:indicator_height="@dimen/dp_6"
+                app:indicator_margin="@dimen/dp_6"
+                app:indicator_width="@dimen/dp_6"
+                app:is_auto_play="true"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </LinearLayout>
     </LinearLayout>
 
     <LinearLayout
@@ -115,24 +136,19 @@
         android:layout_height="15dp"
         android:orientation="vertical" />
 
-    <View
-        android:id="@+id/view1"
-        android:layout_width="match_parent"
-        android:layout_height="2dip"
-        android:background="@color/grey_line" />
-
 
     <View
         android:id="@+id/view2"
         android:layout_width="match_parent"
-        android:layout_height="2dip"
+        android:layout_height="1dip"
         android:background="@color/grey_line" />
+
 
     <GridLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:background="#FFFFFF"
+        android:background="#ffffff"
         android:columnCount="5"
         android:rowCount="4"
         android:useDefaultMargins="true">
@@ -142,19 +158,19 @@
             android:id="@+id/bind_device"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_row="0"
             android:layout_column="0"
             android:layout_gravity="center"
+            android:layout_row="0"
             android:background="#00000000"
-            app:srcCompat="@drawable/bind_device2" />
+            app:srcCompat="@drawable/bind_device" />
 
         <TextView
             android:id="@+id/text1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_row="1"
             android:layout_column="0"
             android:layout_gravity="center_horizontal"
+            android:layout_row="1"
             android:text="绑定设备"
             android:textSize="12sp" />
 
@@ -162,9 +178,9 @@
             android:id="@+id/button2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_row="0"
             android:layout_column="1"
             android:layout_gravity="center"
+            android:layout_row="0"
             android:background="#00000000"
             app:srcCompat="@drawable/kepu" />
 
@@ -172,9 +188,9 @@
             android:id="@+id/text2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_row="1"
             android:layout_column="1"
             android:layout_gravity="center_horizontal"
+            android:layout_row="1"
             android:text="小科普"
             android:textSize="12sp" />
 
@@ -182,9 +198,9 @@
             android:id="@+id/button3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_row="0"
             android:layout_column="2"
             android:layout_gravity="center"
+            android:layout_row="0"
             android:background="#00000000"
             app:srcCompat="@drawable/find_pet3" />
 
@@ -192,9 +208,9 @@
             android:id="@+id/text3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_row="1"
             android:layout_column="2"
             android:layout_gravity="center_horizontal"
+            android:layout_row="1"
             android:text="寻宠启示"
             android:textSize="12sp" />
 
@@ -202,9 +218,9 @@
             android:id="@+id/button4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_row="0"
             android:layout_column="3"
             android:layout_gravity="center"
+            android:layout_row="0"
             android:background="#00000000"
             app:srcCompat="@drawable/device_info" />
 
@@ -212,9 +228,9 @@
             android:id="@+id/text4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_row="1"
             android:layout_column="3"
             android:layout_gravity="center_horizontal"
+            android:layout_row="1"
             android:text="设备信息"
             android:textSize="12sp" />
 
@@ -222,9 +238,9 @@
             android:id="@+id/button41"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_row="0"
             android:layout_column="4"
             android:layout_gravity="center"
+            android:layout_row="0"
             android:background="#00000000"
             app:srcCompat="@drawable/safe_room" />
 
@@ -232,9 +248,9 @@
             android:id="@+id/text41"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_row="1"
             android:layout_column="4"
             android:layout_gravity="center_horizontal"
+            android:layout_row="1"
             android:text="安全区"
             android:textSize="12sp" />
 
@@ -242,9 +258,9 @@
             android:id="@+id/button5"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_row="2"
             android:layout_column="0"
             android:layout_gravity="center"
+            android:layout_row="2"
             android:background="#00000000"
             app:srcCompat="@drawable/award" />
 
@@ -252,9 +268,9 @@
             android:id="@+id/text5"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_row="3"
             android:layout_column="0"
             android:layout_gravity="center_horizontal"
+            android:layout_row="3"
             android:text="抽奖"
             android:textSize="12sp" />
 
@@ -262,9 +278,9 @@
             android:id="@+id/button6"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_row="2"
             android:layout_column="1"
             android:layout_gravity="center"
+            android:layout_row="2"
             android:background="#00000000"
             app:srcCompat="@drawable/contact_us" />
 
@@ -272,9 +288,9 @@
             android:id="@+id/text6"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_row="3"
             android:layout_column="1"
             android:layout_gravity="center_horizontal"
+            android:layout_row="3"
             android:text="联系我们"
             android:textSize="12sp" />
 
@@ -282,9 +298,9 @@
             android:id="@+id/button7"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_row="2"
             android:layout_column="2"
             android:layout_gravity="center"
+            android:layout_row="2"
             android:background="#00000000"
             app:srcCompat="@drawable/vaccinum" />
 
@@ -292,9 +308,9 @@
             android:id="@+id/text7"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_row="3"
             android:layout_column="2"
             android:layout_gravity="center_horizontal"
+            android:layout_row="3"
             android:text="疫苗规划"
             android:textSize="12sp" />
 
@@ -302,9 +318,9 @@
             android:id="@+id/button81"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_row="2"
             android:layout_column="3"
             android:layout_gravity="center"
+            android:layout_row="2"
             android:background="#00000000"
             app:srcCompat="@drawable/recharge" />
 
@@ -312,9 +328,9 @@
             android:id="@+id/text81"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_row="3"
             android:layout_column="3"
             android:layout_gravity="center_horizontal"
+            android:layout_row="3"
             android:text="充值"
             android:textSize="12sp" />
 
@@ -322,9 +338,9 @@
             android:id="@+id/button8"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_row="2"
             android:layout_column="4"
             android:layout_gravity="center"
+            android:layout_row="2"
             android:background="#00000000"
             app:srcCompat="@drawable/find_more" />
 
@@ -332,19 +348,12 @@
             android:id="@+id/text8"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_row="3"
             android:layout_column="4"
             android:layout_gravity="center_horizontal"
+            android:layout_row="3"
             android:text="更多"
             android:textSize="12sp" />
     </GridLayout>
-
-
-    <View
-        android:id="@+id/view3"
-        android:layout_width="match_parent"
-        android:layout_height="1dip"
-        android:background="@color/grey_line" />
 
 
     <View
@@ -353,16 +362,29 @@
         android:layout_height="1dip"
         android:background="@color/grey_line" />
 
-    <RelativeLayout
-        android:id="@+id/r6"
+    <LinearLayout
+        android:id="@+id/temp_Li"
         android:layout_width="match_parent"
-        android:layout_height="131dp"
-        android:layout_marginLeft="0dp"
-        android:layout_marginTop="0dp"
-        android:layout_marginRight="0dp"
-        android:layout_marginBottom="0dp"
-        android:background="@drawable/home_bac5">
+        android:layout_height="15dp"
+        android:background="#ffffff"
+        android:orientation="vertical" />
 
 
+    <RelativeLayout
+        android:id="@+id/btmLinea"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        >
+
+        <ImageView
+            android:id="@+id/btm_img"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentTop="true"
+            android:background="@drawable/shape_yuanjiao2"
+            android:scaleType="fitXY"
+            app:srcCompat="@drawable/btm_bac3" />
     </RelativeLayout>
 </LinearLayout>

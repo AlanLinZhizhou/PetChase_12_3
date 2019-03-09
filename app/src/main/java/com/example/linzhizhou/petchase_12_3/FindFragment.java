@@ -1,7 +1,9 @@
 package com.example.linzhizhou.petchase_12_3;
 
 import android.content.Context;
+import android.content.res.AssetManager;
 import android.graphics.BitmapFactory;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.provider.ContactsContract;
 import android.support.annotation.NonNull;
@@ -197,6 +199,9 @@ public class FindFragment extends Fragment {
                 LayoutInflater facs = getLayoutInflater();
                 View view1 = facs.inflate(R.layout.item, null);
                 t1 = view1.findViewById(R.id.helloText);
+                AssetManager mgr=getActivity().getAssets();
+                Typeface tf=Typeface.createFromAsset(mgr, "fonts/lolicat.ttf");
+                t1.setTypeface(tf);
                 t1.setBackground(getResources().getDrawable(R.drawable.guide_1_anim_1));
 
                 arrayAdapter = new ArrayAdapter<>(context, R.layout.item, R.id.helloText, al);

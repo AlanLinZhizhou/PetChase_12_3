@@ -47,7 +47,7 @@
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
+                    android:layout_marginTop="13dp"
 
                     android:layout_toLeftOf="@+id/hometitle2"
                     android:background="@drawable/ic_personal_tab_custom_topic2" />
@@ -57,7 +57,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentRight="true"
-                    android:layout_marginTop="10dp"
+                    android:layout_marginTop="13dp"
                     android:gravity="center_vertical"
                     android:text="  智能生活   "
                     android:textColor="#FFFFFF"
@@ -73,7 +73,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="        众里寻它     千百度"
+            android:text="        众里寻它    千百度"
             android:textColor="#ffffff"
             android:textSize="11sp" />
 

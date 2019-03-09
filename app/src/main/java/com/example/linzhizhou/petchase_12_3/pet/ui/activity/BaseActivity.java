@@ -23,8 +23,6 @@ import io.reactivex.Observable;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.functions.Consumer;
 import io.reactivex.schedulers.Schedulers;
-
-
 public abstract class BaseActivity extends RxAppCompatActivity
 {
     /*获取布局资源*/

@@ -52,7 +52,7 @@
             android:textColor="#000000"
             android:textSize="52px" />
 
-        <TextView
+        <EditText
             android:id="@+id/msg_name"
             android:layout_width="wrap_content"
             android:layout_height="60px"
@@ -64,7 +64,8 @@
             android:hint="Cube"
             android:minWidth="332px"
             android:textColorHint="#cccccc"
-            android:textSize="51px" />
+            android:textSize="51px"
+            />
 
     </com.zhy.autolayout.AutoRelativeLayout>
 
@@ -232,7 +233,7 @@
         android:layout_marginRight="35px"
         android:background="@drawable/shape_msg_btn_pet"
         android:gravity="center"
-        android:text="退出"
+        android:text="保存"
         android:textColor="@color/colorWhite"
         android:textSize="54px" />
 

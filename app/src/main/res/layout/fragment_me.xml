@@ -525,6 +525,7 @@
 
 
                 <TextView
+                    android:id="@+id/account_details"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="37px"
@@ -586,6 +587,7 @@
                     android:src="@drawable/me_setting_icon" />
 
                 <TextView
+                    android:id="@+id/settings"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="37px"
@@ -618,6 +620,7 @@
                     android:src="@drawable/me_feedback_icon" />
 
                 <TextView
+                    android:id="@+id/suggestion"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="37px"

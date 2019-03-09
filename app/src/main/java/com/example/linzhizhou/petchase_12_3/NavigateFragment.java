@@ -34,6 +34,7 @@ import com.amap.api.maps.model.LatLng;
 import com.amap.api.maps.model.Marker;
 import com.amap.api.maps.model.MarkerOptions;
 import com.amap.api.maps.model.MyLocationStyle;
+import com.example.linzhizhou.petchase_12_3.pet.ui.activity.MeMsgActivity;
 import com.iflytek.cloud.thirdparty.B;
 import com.tckj.zyfsdk.ZYFSdk;
 import com.tckj.zyfsdk.entity.DeviceDetailsEntity;
@@ -110,12 +111,20 @@ public class NavigateFragment extends Fragment {
         Typeface tf=Typeface.createFromAsset(mgr, "fonts/lolicat.ttf");
         tv2.setTypeface(tf);
         tv3.setTypeface(tf);
+        tv3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent_tv3=new Intent(getActivity(), MeMsgActivity.class);
+                startActivity(intent_tv3);
+            }
+        });
         //给手机位置标点
         requestPermission();
         getLocationInfo();
         LatLng latLng = new LatLng(wd, jd);
         MarkerOptions markerOptions = new MarkerOptions();
         markerOptions.position(latLng);
+        markerOptions.icon(BitmapDescriptorFactory.fromResource(R.drawable.walk_navi));
         Marker marker = aMap.addMarker(markerOptions);
         //给宠物位置标点
         ZYFSdk.getInstance().getBindDeviceDetails(context, "001221A003E6", new ZYFGetBindDeviceListener() {
@@ -124,8 +133,13 @@ public class NavigateFragment extends Fragment {
                 // List a=new ArrayList();
                 passjd=deviceDetailsEntity.getRtData().getRecords().get(8).getFieldValue().toString();
                 passwd=deviceDetailsEntity.getRtData().getRecords().get(9).getFieldValue().toString();
+
                 double dLnt=Double.parseDouble(passjd);
                 double dLat=Double.parseDouble(passwd);
+                dLnt=dLnt+0.00490;
+                dLat=dLat-0.001;
+                passjd=dLnt+"";
+                passwd=dLat+"";
                 //double dLnt = Double.parseDouble(deviceDetailsEntity.getRtData().getRecords().get(8).getFieldValue().toString());//经度
                 //double dLat = Double.parseDouble(deviceDetailsEntity.getRtData().getRecords().get(9).getFieldValue().toString());//经度
                 LatLng latLng = new LatLng(dLat, dLnt);
@@ -134,7 +148,7 @@ public class NavigateFragment extends Fragment {
                 MarkerOptions markerOptions = new MarkerOptions();
                 markerOptions.position(latLng);
                 //设置自定义图标
-                markerOptions.icon(BitmapDescriptorFactory.fromResource(R.drawable.walk_navi));
+                markerOptions.icon(BitmapDescriptorFactory.fromResource(R.drawable.chase_dog));
                 Marker marker = aMap.addMarker(markerOptions);
                 aMap.moveCamera(cu);
             }

@@ -2,6 +2,8 @@ package com.example.linzhizhou.petchase_12_3.pet.ui.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.TextView;
 
@@ -15,30 +17,32 @@ import butterknife.OnClick;
 /**
  * 设置宠物信息
  */
-public class PetMsgActivity extends BaseActivity
+public class PetMsgActivity extends AppCompatActivity
 {
 
     @Bind(R.id.top_text)
     TextView mTopText;
 
-
     @Override
-    protected int getLayoutResource()
-    {
-        return R.layout.activity_pet_msg;
-    }
-
-    @Override
-    protected void setStatusBarColor()
-    {
-
-    }
-
-    @Override
-    protected void initView(Bundle savedInstanceState)
-    {
-        super.initView(savedInstanceState);
-        mTopText.setText("添加宠物");
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_pet_msg);
+        TextView msglong=findViewById(R.id.msg_long);
+        msglong.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(PetMsgActivity.this, MainActivity.class));
+                finish();
+            }
+        });
+        TextView msgsave=findViewById(R.id.msg_save);
+        msgsave.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(PetMsgActivity.this, MainActivity.class));
+                finish();
+            }
+        });
     }
 
     @OnClick({R.id.top_back, R.id.msg_long, R.id.msg_save})

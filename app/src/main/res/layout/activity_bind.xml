@@ -20,7 +20,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:background="@color/colorPrimary"
-        android:text="返回"
+        android:text="单击绑定"
         android:textColor="@android:color/white"
         android:textSize="18sp" />
 

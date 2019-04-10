@@ -1,7 +1,9 @@
 package com.example.linzhizhou.petchase_12_3;
 
+import android.app.ProgressDialog;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.os.SystemClock;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
@@ -24,7 +26,7 @@ public class BindActivity extends AppCompatActivity
     TextView mLayoutTitle;
 
     private BaseAdapter mAdapter;
-
+    private ProgressDialog prgDialog;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState)
@@ -32,7 +34,8 @@ public class BindActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bind);
         ButterKnife.bind(this);
-
+        prgDialog= new ProgressDialog(this);
+        prgDialog.setCancelable(false);
         mLayoutTitle.setText("绑定设备");
 
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
@@ -68,6 +71,11 @@ public class BindActivity extends AppCompatActivity
             case R.id.action:
 //                Toast.makeText(this, getString(R.string.toast_bind), Toast.LENGTH_SHORT).show();
                //Toast.makeText(this, "绑定成功~", Toast.LENGTH_SHORT).show();
+                prgDialog.setMessage("验证中，请稍后");
+                prgDialog.show();
+                SystemClock.sleep(2300);
+                //prgDialog.hide();
+                Toast.makeText(this, "绑定成功", Toast.LENGTH_SHORT).show();
                 finish();
                 break;
         }

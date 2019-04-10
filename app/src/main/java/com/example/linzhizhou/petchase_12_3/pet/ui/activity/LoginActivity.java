@@ -13,8 +13,11 @@ import com.example.linzhizhou.petchase_12_3.R;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
+import java.io.UnsupportedEncodingException;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 
 import butterknife.Bind;
 import butterknife.OnClick;
@@ -89,8 +92,11 @@ public class LoginActivity extends BaseActivity
     Runnable testLogin=new Runnable() {
         @Override
         public void run() {
-            strurl="http://192.168.137.1:8080/login?uphone=";
-            strurl=strurl+phone.getText().toString()+"&upass="+passwd.getText().toString();
+            String encodePass;
+            encodePass=md5Decode16(passwd.getText().toString());
+            strurl="http://192.168.137.1:8080/TestLogin?uphone=";
+//            strurl=strurl+phone.getText().toString()+"&upass="+passwd.getText().toString();
+            strurl=strurl+phone.getText().toString()+"&upass="+encodePass;
             try {
                 URL url = null;
                 url = new URL(strurl);
@@ -122,4 +128,41 @@ public class LoginActivity extends BaseActivity
 //            }
         }
     };
+
+    /**
+     * 32位MD5加密
+     *
+     * @param content -- 待加密内容
+     * @return
+     */
+    public String md5Decode(String content) {
+        byte[] hash;
+        try {
+            hash = MessageDigest.getInstance("MD5").digest(content.getBytes("UTF-8"));
+        } catch (NoSuchAlgorithmException e) {
+            throw new RuntimeException("NoSuchAlgorithmException", e);
+        } catch (UnsupportedEncodingException e) {
+            throw new RuntimeException("UnsupportedEncodingException", e);
+        }
+        //对生成的16字节数组进行补零操作
+        StringBuilder hex = new StringBuilder(hash.length * 2);
+        for (byte b : hash) {
+            if ((b & 0xFF) < 0x10) {
+                hex.append("0");
+            }
+            hex.append(Integer.toHexString(b & 0xFF));
+        }
+        return hex.toString();
+    }
+
+    /**
+     * 16位MD5加密
+     * 实际是截取的32位加密结果的中间部分(8-24位)
+     *
+     * @param content
+     * @return
+     */
+    public String md5Decode16(String content) {
+        return md5Decode(content).substring(8, 24);
+    }
 }

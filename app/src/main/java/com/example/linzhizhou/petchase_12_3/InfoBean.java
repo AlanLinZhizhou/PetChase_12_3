@@ -60,13 +60,11 @@ public class InfoBean {
         list.add(new InfoBean("信号强度", "强", false));
         list.add(new InfoBean("电量百分比", "93%", false));
         list.add(new InfoBean("采集时间","2019-3-1",false));
-        list.add(new InfoBean("设备电压", "待更改", false));
-
+        list.add(new InfoBean("设备电压", "3V", false));
         list.add(new InfoBean("GPS（经度）", "<32.183602,118.699000>", false));
         list.add(new InfoBean("GPS（纬度）", "<32.185934,118.689972>", false));
-        list.add(new InfoBean("LBS（经度）", "<待更改>", false));
-        list.add(new InfoBean("LBS（纬度）", "<待更改>", false));
-
+        list.add(new InfoBean("LBS（经度）", "——", false));
+        list.add(new InfoBean("LBS（纬度）", "——", false));
         return list;
     }
 }

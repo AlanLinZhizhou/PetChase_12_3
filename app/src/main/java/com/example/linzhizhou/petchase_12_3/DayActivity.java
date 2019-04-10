@@ -40,7 +40,7 @@ public class DayActivity extends AppCompatActivity
         EventBus.getDefault().register(this);
 
         mLayoutTitle.setText("疫苗规划");
-        mData = new DayBean("2019-3-27");//从数据库读取日期，如果是默认日期1970-1-1就待表没有疫苗规划
+        mData = new DayBean("2019-5-27");//从数据库读取日期，如果是默认日期1970-1-1就待表没有疫苗规划
         setTitle(mData);
     }
 

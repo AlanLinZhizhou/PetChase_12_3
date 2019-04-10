@@ -184,6 +184,7 @@
         android:background="@color/colorF0" />
     <!--分割线-->
     <TextView
+
         android:layout_width="match_parent"
         android:layout_height="1px"
         android:layout_marginLeft="42px"

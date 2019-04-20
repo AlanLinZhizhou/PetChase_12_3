@@ -94,7 +94,8 @@ public class LoginActivity extends BaseActivity
         public void run() {
             String encodePass;
             encodePass=md5Decode16(passwd.getText().toString());
-            strurl="http://192.168.137.1:8080/TestLogin?uphone=";
+//            strurl="http://192.168.137.1:8080/TestLogin?uphone=";
+            strurl="http://lzzpros.cn:8080/TestLogin?uphone=";
 //            strurl=strurl+phone.getText().toString()+"&upass="+passwd.getText().toString();
             strurl=strurl+phone.getText().toString()+"&upass="+encodePass;
             try {

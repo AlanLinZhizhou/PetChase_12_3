@@ -34,7 +34,8 @@ public class FindFragment extends Fragment {
     private ArrayList<String> al;
     private ArrayAdapter<String> arrayAdapter;
     private int i;
-    private String strurl = "http://192.168.137.1:8080/Serverlet/hello?id=";
+//    private String strurl = "http://192.168.137.1:8080/Serverlet/hello?id=";
+    private String strurl = "http://lzzpros.cn:8080/Serverlet/hello?id=";
     private TextView t1;
     @Override
     public void onAttach(Context context) {
@@ -115,7 +116,7 @@ public class FindFragment extends Fragment {
             @Override
             public void onAdapterAboutToEmpty(int itemsInAdapter) {
                 // Ask for more data here
-                al.add("时间太赶拉，来不及写爬虫去爬数据，先凑活凑活拉(●'◡'●) ");
+                al.add("休息一会再来看看吧(●'◡'●) ");
                 arrayAdapter.notifyDataSetChanged();
                 Log.d("LIST", "notified");
                 // i++;
@@ -177,7 +178,8 @@ public class FindFragment extends Fragment {
             for (int i = 1; i <= 10; i++) {
                 try {
                     //String temp= ((String) i);
-                    strurl = "http://192.168.137.1:8080/Serverlet/hello?id=";
+//                    strurl = "http://192.168.137.1:8080/Serverlet/hello?id=";
+                    strurl = "http://lzzpros.cn:8080/Serverlet/hello?id=";
                     strurl += i;
                     url = new URL(strurl);
                     HttpURLConnection urlConn = (HttpURLConnection) url.openConnection();

@@ -24,6 +24,7 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.net.URLDecoder;
 import java.util.ArrayList;
 
 import butterknife.ButterKnife;
@@ -35,7 +36,7 @@ public class FindFragment extends Fragment {
     private ArrayAdapter<String> arrayAdapter;
     private int i;
 //    private String strurl = "http://192.168.137.1:8080/Serverlet/hello?id=";
-    private String strurl = "http://lzzpros.cn:8080/Serverlet/hello?id=";
+    private String strurl = "http://lzzpros.cn:80/Serverlet/hello?id=";
     private TextView t1;
     @Override
     public void onAttach(Context context) {
@@ -179,7 +180,7 @@ public class FindFragment extends Fragment {
                 try {
                     //String temp= ((String) i);
 //                    strurl = "http://192.168.137.1:8080/Serverlet/hello?id=";
-                    strurl = "http://lzzpros.cn:8080/Serverlet/hello?id=";
+                    strurl = "http://lzzpros.cn:80/Serverlet/hello?id=";
                     strurl += i;
                     url = new URL(strurl);
                     HttpURLConnection urlConn = (HttpURLConnection) url.openConnection();
@@ -190,7 +191,8 @@ public class FindFragment extends Fragment {
                     while ((readLine = bufferedReader.readLine()) != null) {
                         result += readLine;
                     }
-                    al.add(result);
+                    //适配云服务器的编码问题
+                    al.add(URLDecoder.decode(result,"UTF8"));
                     in.close();
 
                     urlConn.disconnect();//关闭连接

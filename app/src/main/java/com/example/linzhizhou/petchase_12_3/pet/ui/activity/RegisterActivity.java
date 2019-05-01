@@ -254,7 +254,7 @@ public class RegisterActivity extends BaseActivity implements TextWatcher {
         @Override
         public void run() {
 //            strurl = "http://192.168.137.1:8080/register?uphone=";
-            strurl = "http://lzzpros.cn:8080/register?uphone=";
+            strurl = "http://lzzpros.cn:80/register?uphone=";
             strurl = strurl + phonenum + "&upass=" + password;
             try {
                 URL url = null;

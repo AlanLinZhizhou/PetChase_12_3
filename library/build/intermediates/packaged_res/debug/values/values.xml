@@ -6,7 +6,7 @@
         <attr format="integer" name="min_adapter_stack"/>
         <attr format="integer" name="max_visible"/>
     </declare-styleable>
-    <string name="app_name">Fling Swipe Cards</string>
+    <string name="app_name">宠物之家</string>
     <style name="SwipeFling">
         <item name="rotation_degrees">15</item>
         <item name="min_adapter_stack">6</item>

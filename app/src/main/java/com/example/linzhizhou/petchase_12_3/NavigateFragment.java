@@ -50,7 +50,6 @@ public class NavigateFragment extends Fragment {
     private LocationManager locationManager;
     private Location location;
     private String locationProvider;
-
     private String passjd;
     private String passwd;
     @Override

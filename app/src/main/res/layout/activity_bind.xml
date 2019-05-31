@@ -19,8 +19,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:background="@color/colorPrimary"
+        android:background="@color/light_grey"
         android:text="单击绑定"
+        android:enabled="false"
         android:textColor="@android:color/white"
         android:textSize="18sp" />
 

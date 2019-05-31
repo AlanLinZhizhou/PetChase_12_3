@@ -60,8 +60,8 @@ public class BindBean
     public static List<BindBean> getList(Context context)
     {
         List<BindBean> list = new ArrayList<>();
-        list.add(new BindBean("设备绑定状态", "待绑定", false));
-        list.add(new BindBean("设备Sn号", "请输入项圈后的sn号", true));
+        list.add(new BindBean("设备绑定状态", "绑定成功", false));
+        list.add(new BindBean("设备Sn号", "001221A003E6", false));
         list.add(new BindBean("AppID", "001", false));
         list.add(new BindBean("Product Key", "47d71eceec62", false));
         list.add(new BindBean("设备烧录情况", "已烧录成功", false));

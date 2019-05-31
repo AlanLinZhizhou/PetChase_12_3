@@ -41,7 +41,7 @@
         android:layout_height="wrap_content"
         android:lineSpacingExtra="5dp"
         android:padding="15dp"
-        android:text="恭喜您已中奖，奖品由“宠物之家”提供，“宠物之家”将在3-7个工作日内发出奖品，请注意及时查收哦。"
+        android:text="提示：这是为商家预留的抽奖模块，现在写入的数据暂时不会存入数据库。用户中奖后在这里进行抽奖信息的填写"
         android:textColor="@android:color/darker_gray"
         android:textSize="15sp"
         app:layout_constraintLeft_toLeftOf="parent"

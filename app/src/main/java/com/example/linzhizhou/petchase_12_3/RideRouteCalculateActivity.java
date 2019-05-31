@@ -142,7 +142,7 @@ public class RideRouteCalculateActivity extends BaseActivity {
         locationManager.requestLocationUpdates(locationProvider, 2000, 1, new LocationListener() {
             @Override
             public void onLocationChanged(Location location) {
-                //如果地点发生了改变，则重新计算路径，以获得实时定位导航的效果
+                //如果地点发生了改变，则重新计算路径，以获得实时定位导航的效果  //距离不合适，正在调整，暂时关闭动态刷新
 //                getLocationInfo();
 //                NaviLatLng tempStartPoint=new NaviLatLng(wd,jd);
 //                ZYFSdk.getInstance().getBindDeviceDetails(context, "001221A003E6", new ZYFGetBindDeviceListener() {

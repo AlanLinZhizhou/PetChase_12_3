@@ -59,7 +59,7 @@
                     android:layout_alignParentRight="true"
                     android:layout_marginTop="13dp"
                     android:gravity="center_vertical"
-                    android:text="  智能生活   "
+                    android:text="  智能生活    "
                     android:textColor="#FFFFFF"
                     android:textSize="15sp"
                     android:textStyle="bold" />
@@ -331,7 +331,7 @@
             android:layout_column="3"
             android:layout_gravity="center_horizontal"
             android:layout_row="3"
-            android:text="充值"
+            android:text="网卡"
             android:textSize="12sp" />
 
         <ImageButton

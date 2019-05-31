@@ -11,14 +11,16 @@ import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
 import org.greenrobot.eventbus.ThreadMode;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class DayActivity extends AppCompatActivity
-{
+public class DayActivity extends AppCompatActivity {
 
     @Bind(R.id.layout_title)
     TextView mLayoutTitle;
@@ -32,22 +34,27 @@ public class DayActivity extends AppCompatActivity
 
 
     @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState)
-    {
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_day);
         ButterKnife.bind(this);
         EventBus.getDefault().register(this);
 
         mLayoutTitle.setText("疫苗规划");
-        mData = new DayBean("2019-5-27");//从数据库读取日期，如果是默认日期1970-1-1就待表没有疫苗规划
+        SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd");
+//        mData = new DayBean("2019-6-27");//从数据库读取日期，如果是默认日期1970-1-1就待表没有疫苗规划
+        try {
+            mData = new DayBean(subMonth(df.format(new Date())));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+//        mData = new DayBean(df.format(new Date()));
         setTitle(mData);
     }
 
 
     /*修改时间*/
-    private void setTitle(DayBean data)
-    {
+    private void setTitle(DayBean data) {
         mTvDescript.setText(TimeUtils.getTimeDifference(data.getTime()));
         StringBuilder builder = new StringBuilder("目标日：");
         builder.append(data.getTime())
@@ -58,10 +65,8 @@ public class DayActivity extends AppCompatActivity
 
 
     @OnClick({R.id.layout_finish, R.id.tv_action})
-    public void onViewClicked(View view)
-    {
-        switch (view.getId())
-        {
+    public void onViewClicked(View view) {
+        switch (view.getId()) {
             case R.id.layout_finish:
                 finish();
                 break;
@@ -75,15 +80,24 @@ public class DayActivity extends AppCompatActivity
 
 
     @Subscribe(threadMode = ThreadMode.MAIN)
-    public void onMainEvent(DayBean data)
-    {
+    public void onMainEvent(DayBean data) {
         setTitle(data);
     }
 
     @Override
-    protected void onDestroy()
-    {
+    protected void onDestroy() {
         super.onDestroy();
         EventBus.getDefault().unregister(this);
+    }
+
+    private String subMonth(String date) throws ParseException, java.text.ParseException {
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+        Date dt = sdf.parse(date);
+        Calendar rightNow = Calendar.getInstance();
+        rightNow.setTime(dt);
+        rightNow.add(Calendar.MONTH, 1);
+        Date dt1 = rightNow.getTime();
+        String reStr = sdf.format(dt1);
+        return reStr;
     }
 }

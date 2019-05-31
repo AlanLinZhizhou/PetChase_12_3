@@ -193,7 +193,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener
                 openActivity(DayActivity.class);
                 break;
             case R.id.button81:
-                openActivity(PayActivity.class);
+//                openActivity(PayActivity.class);
 
                 break;
             default:

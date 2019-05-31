@@ -84,7 +84,7 @@ public class FindFragment extends Fragment {
 
         new Thread(networkTask).start();
         try {
-            Thread.sleep(1000);
+            Thread.sleep(800);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }

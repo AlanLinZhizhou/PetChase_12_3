@@ -40,8 +40,8 @@ public class MeFragment extends Fragment implements View.OnClickListener{
         accountDetials.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent account=new Intent(getActivity(),PayActivity.class);
-                startActivity(account);
+//                Intent account=new Intent(getActivity(),PayActivity.class);
+//                startActivity(account);
             }
         });
         ImageButton chongwu=view.findViewById(R.id.chongwu);

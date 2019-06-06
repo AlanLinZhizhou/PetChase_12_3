@@ -121,7 +121,7 @@ public class RideRouteCalculateActivity extends BaseActivity {
         }
         Location location = locationManager.getLastKnownLocation(locationProvider);
         if (location != null) {
-            // 不为空,显示地理位置经纬度
+            // 不为空,获取地理位置经纬度
             jd = location.getLongitude();
             wd = location.getLatitude();
         } else {

@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:background="@color/colorWhite"
     android:orientation="vertical"
-    tools:context=".pet.ui.activity.AgreeDetialActivity">
+    tools:context=".reglogin.ui.activity.AgreeDetialActivity">
 
     <include
         layout="@layout/layout_toolbar"

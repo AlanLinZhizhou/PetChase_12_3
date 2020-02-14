@@ -38,7 +38,7 @@
         android:scaleType="centerCrop" />
 
 
-    <com.example.linzhizhou.petchase_12_3.pet.utils.LeaderView
+    <com.example.linzhizhou.petchase_12_3.reglogin.utils.LeaderView
         android:id="@+id/item_image"
         android:layout_width="840px"
         android:layout_height="960px"

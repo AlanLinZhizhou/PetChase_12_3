@@ -6,7 +6,7 @@
     android:background="#f4f4f4"
     android:fitsSystemWindows="true"
     android:orientation="vertical"
-    tools:context=".pet.ui.activity.MissActivity">
+    tools:context=".reglogin.ui.activity.MissActivity">
 
     <include
         layout="@layout/layout_toolbar"

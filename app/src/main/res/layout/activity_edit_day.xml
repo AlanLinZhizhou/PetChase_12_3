@@ -7,7 +7,7 @@
     android:fitsSystemWindows="true"
     android:focusable="true"
     android:focusableInTouchMode="true"
-    tools:context=".LuckydrawActivity">
+    tools:context=".lottery.LuckydrawActivity">
 
 
     <include

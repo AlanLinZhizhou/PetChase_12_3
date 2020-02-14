@@ -24,7 +24,7 @@
     </uses-permission>
 
     <application
-        android:name=".pet.App"
+        android:name=".reglogin.App"
         android:allowBackup="false"
         android:icon="@drawable/icon_426"
         android:label="@string/app_name"
@@ -53,7 +53,7 @@
 
         <service android:name="com.amap.api.location.APSService" />
 
-        <activity android:name=".pet.ui.activity.LeaderActivity">
+        <activity android:name=".reglogin.ui.activity.LeaderActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -66,45 +66,45 @@
             android:name="com.amap.api.navi.AmapRouteActivity"
             android:configChanges="orientation|keyboardHidden|screenSize" />
         <activity
-            android:name=".BasicNaviActivity"
+            android:name=".navigate.BasicNaviActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="@string/app_name"
             android:theme="@android:style/Theme.Light.NoTitleBar" />
         <activity
-            android:name=".RouteNaviActivity"
+            android:name=".navigate.RouteNaviActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="@string/app_name"
             android:theme="@android:style/Theme.Light.NoTitleBar" />
         <activity
-            android:name="BasicWalkNaviActivity"
+            android:name=".navigate.BasicWalkNaviActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="@string/app_name"
             android:theme="@android:style/Theme.Light.NoTitleBar" />
         <activity
-            android:name="RideRouteCalculateActivity"
+            android:name=".navigate.RideRouteCalculateActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="@string/app_name"
             android:theme="@android:style/Theme.Light.NoTitleBar" />
         <activity
-            android:name=".CustomCarActivity"
+            android:name=".navigate.CustomCarActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="@string/app_name"
             android:theme="@android:style/Theme.Light.NoTitleBar" />
-        <activity android:name=".BindActivity" />
-        <activity android:name=".LuckydrawActivity" />
-        <activity android:name=".SuggestActivity" />
-        <activity android:name=".FindActivity" />
-        <activity android:name=".DayActivity" />
-        <activity android:name=".EditDayActivity" />
-        <activity android:name=".InformationActivity" />
-        <activity android:name=".InfoActivity" />
-        <activity android:name=".pet.ui.activity.AgreeDetialActivity" />
-        <activity android:name=".pet.ui.activity.LoginActivity" />
-        <activity android:name=".pet.ui.activity.MissActivity" />
-        <activity android:name=".pet.ui.activity.PetMsgActivity" />
-        <activity android:name=".pet.ui.activity.RegisterActivity" />
-        <activity android:name=".pet.ui.activity.MeMsgActivity"/>
-        <activity android:name=".PayActivity" />
+        <activity android:name=".bind.BindActivity" />
+        <activity android:name=".lottery.LuckydrawActivity" />
+        <activity android:name=".advice.SuggestActivity" />
+        <activity android:name=".findpet.FindActivity" />
+        <activity android:name=".vaccine.DayActivity" />
+        <activity android:name=".vaccine.EditDayActivity" />
+        <activity android:name=".science_info.InformationActivity" />
+        <activity android:name=".querydevice.InfoActivity" />
+        <activity android:name=".reglogin.ui.activity.AgreeDetialActivity" />
+        <activity android:name=".reglogin.ui.activity.LoginActivity" />
+        <activity android:name=".reglogin.ui.activity.MissActivity" />
+        <activity android:name=".reglogin.ui.activity.PetMsgActivity" />
+        <activity android:name=".reglogin.ui.activity.RegisterActivity" />
+        <activity android:name=".reglogin.ui.activity.MeMsgActivity"/>
+        <activity android:name=".chargeIoTcard.PayActivity" />
 
     </application>
 

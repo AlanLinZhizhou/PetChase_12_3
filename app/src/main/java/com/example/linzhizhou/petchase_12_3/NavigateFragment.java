@@ -33,14 +33,14 @@ import com.amap.api.maps.model.BitmapDescriptorFactory;
 import com.amap.api.maps.model.LatLng;
 import com.amap.api.maps.model.Marker;
 import com.amap.api.maps.model.MarkerOptions;
-import com.amap.api.maps.model.MyLocationStyle;
-import com.example.linzhizhou.petchase_12_3.pet.ui.activity.MeMsgActivity;
-import com.iflytek.cloud.thirdparty.B;
+import com.example.linzhizhou.petchase_12_3.navigate.BasicWalkNaviActivity;
+import com.example.linzhizhou.petchase_12_3.navigate.CustomCarActivity;
+import com.example.linzhizhou.petchase_12_3.navigate.RideRouteCalculateActivity;
+import com.example.linzhizhou.petchase_12_3.reglogin.ui.activity.MeMsgActivity;
 import com.tckj.zyfsdk.ZYFSdk;
 import com.tckj.zyfsdk.entity.DeviceDetailsEntity;
 import com.tckj.zyfsdk.http.zhttp.listener.ZYFGetBindDeviceListener;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class NavigateFragment extends Fragment {

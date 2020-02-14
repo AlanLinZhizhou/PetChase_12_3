@@ -12,8 +12,9 @@ import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
-import com.example.linzhizhou.petchase_12_3.pet.ui.activity.MeMsgActivity;
-import com.example.linzhizhou.petchase_12_3.pet.ui.activity.PetMsgActivity;
+import com.example.linzhizhou.petchase_12_3.advice.SuggestActivity;
+import com.example.linzhizhou.petchase_12_3.reglogin.ui.activity.MeMsgActivity;
+import com.example.linzhizhou.petchase_12_3.reglogin.ui.activity.PetMsgActivity;
 
 public class MeFragment extends Fragment implements View.OnClickListener{
     @Override

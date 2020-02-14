@@ -6,7 +6,7 @@
     android:background="@color/colorWhite"
     android:fitsSystemWindows="true"
     android:orientation="vertical"
-    tools:context=".pet.ui.activity.LeaderActivity">
+    tools:context=".reglogin.ui.activity.LeaderActivity">
 
 
     <android.support.v7.widget.RecyclerView

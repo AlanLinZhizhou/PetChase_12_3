@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="#d4b675"
     android:fitsSystemWindows="true"
-    tools:context=".DayActivity">
+    tools:context=".vaccine.DayActivity">
 
     <include
         android:id="@+id/layout"

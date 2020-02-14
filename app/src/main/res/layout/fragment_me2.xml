@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="#f4f4f4"
     android:orientation="vertical"
-    tools:context=".pet.ui.activity.MeMsgActivity">
+    tools:context=".reglogin.ui.activity.MeMsgActivity">
 
 
     <include

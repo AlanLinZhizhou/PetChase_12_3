@@ -21,9 +21,15 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.example.linzhizhou.petchase_12_3.advice.SuggestActivity;
+import com.example.linzhizhou.petchase_12_3.bind.BindActivity;
+import com.example.linzhizhou.petchase_12_3.findpet.FindActivity;
+import com.example.linzhizhou.petchase_12_3.lottery.LuckydrawActivity;
+import com.example.linzhizhou.petchase_12_3.querydevice.InfoActivity;
+import com.example.linzhizhou.petchase_12_3.science_info.InformationActivity;
+import com.example.linzhizhou.petchase_12_3.vaccine.DayActivity;
 import com.squareup.picasso.Picasso;
 import com.youth.banner.Banner;
-import com.youth.banner.BannerConfig;
 
 import java.util.Arrays;
 

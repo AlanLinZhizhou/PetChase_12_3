@@ -56,18 +56,18 @@ public class BindBean
     }
 
 
-    public static List<BindBean> getList(Context context)
-    {
-        List<BindBean> list = new ArrayList<>();
-        list.add(new BindBean("设备绑定状态", "绑定成功", false));
-        list.add(new BindBean("设备Sn号", "001221A003E6", false));
-        list.add(new BindBean("AppID", "001", false));
-        list.add(new BindBean("Product Key", "47d71eceec62", false));
-        list.add(new BindBean("设备烧录情况", "已烧录成功", false));
-        list.add(new BindBean("合作伙伴ID", "ec4f64cab2c94a891d08acf86", false));
-        list.add(new BindBean("设备芯片", "MTK2503芯片组", false));
-        list.add(new BindBean("技术支持平台", "智云服平台", false));
-
-        return list;
-    }
+//    public static List<BindBean> getList(Context context)
+//    {
+//        List<BindBean> list = new ArrayList<>();
+//        list.add(new BindBean("设备绑定状态", "绑定成功", false));
+//        list.add(new BindBean("设备Sn号", "001221A003E6", false));
+//        list.add(new BindBean("AppID", "001", false));
+//        list.add(new BindBean("Product Key", "47d71eceec62", false));
+//        list.add(new BindBean("设备烧录情况", "已烧录成功", false));
+//        list.add(new BindBean("合作伙伴ID", "ec4f64cab2c94a891d08acf86", false));
+//        list.add(new BindBean("设备芯片", "MTK2503芯片组", false));
+//        list.add(new BindBean("技术支持平台", "智云服平台", false));
+//
+//        return list;
+//    }
 }

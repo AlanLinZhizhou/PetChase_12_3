@@ -20,6 +20,7 @@
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.RECEIVE_SMS" >
     </uses-permission>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_SMS" >
     </uses-permission>
 
@@ -93,10 +94,10 @@
         <activity android:name=".bind.BindActivity" />
         <activity android:name=".lottery.LuckydrawActivity" />
         <activity android:name=".advice.SuggestActivity" />
-        <activity android:name=".findpet.FindActivity" />
+        <activity android:name=".release_info.findpet.FindActivity" />
         <activity android:name=".vaccine.DayActivity" />
         <activity android:name=".vaccine.EditDayActivity" />
-        <activity android:name=".science_info.InformationActivity" />
+        <activity android:name=".release_info.science_info.InformationActivity" />
         <activity android:name=".querydevice.InfoActivity" />
         <activity android:name=".reglogin.ui.activity.AgreeDetialActivity" />
         <activity android:name=".reglogin.ui.activity.LoginActivity" />
@@ -105,6 +106,7 @@
         <activity android:name=".reglogin.ui.activity.RegisterActivity" />
         <activity android:name=".reglogin.ui.activity.MeMsgActivity"/>
         <activity android:name=".chargeIoTcard.PayActivity" />
+        <activity android:name=".release_info.Realease_InfoActivity" />
 
     </application>
 

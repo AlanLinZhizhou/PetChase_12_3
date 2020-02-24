@@ -11,7 +11,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import com.example.linzhizhou.petchase_12_3.R;
-import com.example.linzhizhou.petchase_12_3.navigate.BaseAdapter;
+import com.example.linzhizhou.petchase_12_3.bind.BaseAdapter;
 import com.example.linzhizhou.petchase_12_3.navigate.BaseViewHolder;
 
 import butterknife.Bind;

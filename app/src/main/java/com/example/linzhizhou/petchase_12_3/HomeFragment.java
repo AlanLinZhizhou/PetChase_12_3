@@ -23,10 +23,11 @@ import android.widget.TextView;
 
 import com.example.linzhizhou.petchase_12_3.advice.SuggestActivity;
 import com.example.linzhizhou.petchase_12_3.bind.BindActivity;
-import com.example.linzhizhou.petchase_12_3.findpet.FindActivity;
+import com.example.linzhizhou.petchase_12_3.release_info.Realease_InfoActivity;
+import com.example.linzhizhou.petchase_12_3.release_info.findpet.FindActivity;
 import com.example.linzhizhou.petchase_12_3.lottery.LuckydrawActivity;
 import com.example.linzhizhou.petchase_12_3.querydevice.InfoActivity;
-import com.example.linzhizhou.petchase_12_3.science_info.InformationActivity;
+import com.example.linzhizhou.petchase_12_3.release_info.science_info.InformationActivity;
 import com.example.linzhizhou.petchase_12_3.vaccine.DayActivity;
 import com.squareup.picasso.Picasso;
 import com.youth.banner.Banner;
@@ -199,8 +200,11 @@ public class HomeFragment extends Fragment implements View.OnClickListener
                 openActivity(DayActivity.class);
                 break;
             case R.id.button81:
+                //个人用户暂时无法使用支付宝/微信充值
 //                openActivity(PayActivity.class);
-
+                break;
+            case R.id.button41:
+                openActivity(Realease_InfoActivity.class);
                 break;
             default:
                 break;

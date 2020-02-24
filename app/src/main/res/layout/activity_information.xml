@@ -6,7 +6,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:fitsSystemWindows="true"
-    tools:context=".science_info.InformationActivity">
+    tools:context=".release_info.science_info.InformationActivity">
 
 
     <include
@@ -22,7 +22,7 @@
 
 
     <android.support.v7.widget.RecyclerView
-        android:id="@+id/recyclerView"
+        android:id="@+id/irecyclerView"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:overScrollMode="never"

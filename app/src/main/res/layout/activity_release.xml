@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:focusableInTouchMode="true"
+    android:focusable="true"
+    tools:context=".advice.SuggestActivity">
+
+    <include
+        android:id="@+id/layout"
+        layout="@layout/layout_title"
+        android:layout_width="0dp"
+        android:layout_height="46dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <TextView
+        android:id="@+id/tv_action"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:gravity="center"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:text="发布"
+        android:textColor="@android:color/white"
+        android:textSize="13sp"
+        app:layout_constraintBottom_toBottomOf="@id/layout"
+        app:layout_constraintRight_toRightOf="@id/layout"
+        app:layout_constraintTop_toTopOf="@id/layout" />
+
+
+    <EditText
+        android:id="@+id/release_content"
+        android:layout_width="342dp"
+        android:layout_height="275dp"
+        android:layout_marginStart="16dp"
+        android:background="@android:color/white"
+        android:gravity="start"
+        android:hint="请输入您的寻宠信息/科普信息"
+        android:padding="15dp"
+        android:textColor="@android:color/black"
+        android:textColorHint="@android:color/darker_gray"
+        android:textSize="13sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/layout"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <LinearLayout
+        android:layout_width="347dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="16dp"
+        android:layout_marginStart="16dp"
+        android:background="#ffffff"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <RadioGroup
+            android:id="@+id/rgp_release"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/find_pet"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_weight="1"
+
+                android:drawableTop="@drawable/selector_discover_find"
+                android:gravity="center"
+                android:text="寻宠"
+                android:textColor="@drawable/selector_tab_text_color"
+                android:textSize="12dp" />
+
+            <RadioButton
+                android:id="@+id/kepu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_weight="1"
+
+                android:drawableTop="@drawable/selector_home_find"
+                android:gravity="center"
+                android:text="科普"
+                android:textColor="@drawable/selector_tab_text_color"
+                android:textSize="12dp" />
+
+
+        </RadioGroup>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="10dp"
+            android:orientation="vertical" />
+
+        <TextView
+            android:id="@+id/uploadImg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center_horizontal"
+            android:text="+ 请选择寻宠图片/科普图片"
+            android:textSize="15sp" />
+
+        <ImageView
+            android:id="@+id/bacImg"
+            android:layout_width="wrap_content"
+            android:layout_height="150dp" />
+    </LinearLayout>
+</android.support.constraint.ConstraintLayout>

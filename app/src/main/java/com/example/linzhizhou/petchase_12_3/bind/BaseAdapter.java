@@ -1,4 +1,4 @@
-package com.example.linzhizhou.petchase_12_3.navigate;
+package com.example.linzhizhou.petchase_12_3.bind;
 
 import android.content.res.Resources;
 import android.support.annotation.IntRange;
@@ -12,6 +12,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.linzhizhou.petchase_12_3.R;
+import com.example.linzhizhou.petchase_12_3.navigate.BaseViewHolder;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -224,9 +225,13 @@ public abstract class BaseAdapter<T> extends RecyclerView.Adapter<BaseViewHolder
     @Override
     public BaseViewHolder onCreateViewHolder(ViewGroup parent, int viewType)
     {
+    //这个方法主要生成为每个Item inflater出一个View，但是该方法返回的是一个ViewHolder。该方法把View直接封装在ViewHolder中，
+    //然后我们面向的是ViewHolder这个实例，当然这个ViewHolder需要我们自己去编写。
+
         View layout = null;
         if (mList.isEmpty())
         {
+            //若view为空，则执行inflate函数，若不为空，则不做其他操作
             layout = mEmpty == null ? LayoutInflater.from(mActivity.getApplicationContext()).inflate(R.layout.layout_empty, parent, false) : mEmpty;
         } else
         {

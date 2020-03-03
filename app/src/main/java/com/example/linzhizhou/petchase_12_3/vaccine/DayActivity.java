@@ -1,6 +1,8 @@
 package com.example.linzhizhou.petchase_12_3.vaccine;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
@@ -30,8 +32,8 @@ public class DayActivity extends AppCompatActivity {
     TextView mTvTime;
     @Bind(R.id.tv_descript)
     TextView mTvDescript;
-
-
+    private int flag=0;
+    private Context context;
     private DayBean mData;
 
 
@@ -40,16 +42,24 @@ public class DayActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_day);
         ButterKnife.bind(this);
+        context=getApplicationContext();
         EventBus.getDefault().register(this);
 
         mLayoutTitle.setText("疫苗规划");
         SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd");
-//        mData = new DayBean("2019-6-27");//从数据库读取日期，如果是默认日期1970-1-1就待表没有疫苗规划
-        try {
-            mData = new DayBean(subMonth(df.format(new Date())));
-        } catch (Exception e) {
-            e.printStackTrace();
+        SharedPreferences sp=context.getSharedPreferences("vac",MODE_PRIVATE);
+//        sp.getString("vacc","2020-09-01");
+        String realPlanDate=sp.getString("vacc","2200-09-01");
+        if(realPlanDate.equals("2200-09-01")) {
+            try {
+                mData = new DayBean(subMonth(df.format(new Date())));
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }else{
+            mData = new DayBean(realPlanDate);
         }
+
 //        mData = new DayBean(df.format(new Date()));
         setTitle(mData);
     }
@@ -97,7 +107,8 @@ public class DayActivity extends AppCompatActivity {
         Date dt = sdf.parse(date);
         Calendar rightNow = Calendar.getInstance();
         rightNow.setTime(dt);
-        rightNow.add(Calendar.MONTH, 1);
+//        rightNow.add(Calendar.MONTH, 1);
+
         Date dt1 = rightNow.getTime();
         String reStr = sdf.format(dt1);
         return reStr;

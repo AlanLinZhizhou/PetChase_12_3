@@ -66,10 +66,15 @@ public class InformationActivity extends AppCompatActivity {
                 List<InformationBean> list = new ArrayList<>();
                 Gson gson=new Gson();
                 List<KepuBean> flist = gson.fromJson(sn, new TypeToken<List<KepuBean>>(){}.getType());
-                for (int j = 0; j < 3; j++) {//一次从数据库中取20条记录
+                for (int j = flist.size()-1; j >0 ; j--) {//测试一次从数据库中取20条记录，倒序，显示最新发布的科普
                     KepuBean kp=flist.get(j);
+                    String stars="";
+                    int s=Integer.parseInt(kp.getK_trust());
+                    for(int k=0;k<s;k++){
+                        stars+="★";
+                    }
                     list.add(new InformationBean(kp.getK_icon(),kp.getK_content(),
-                            kp.getK_releaser(),kp.getK_trust()));
+                            kp.getK_releaser(),stars));
                 }
                 mAdapter.setData(list);
             }

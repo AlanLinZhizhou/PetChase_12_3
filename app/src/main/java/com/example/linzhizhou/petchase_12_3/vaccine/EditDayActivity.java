@@ -1,5 +1,7 @@
 package com.example.linzhizhou.petchase_12_3.vaccine;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
@@ -34,8 +36,8 @@ public class EditDayActivity extends AppCompatActivity
 
     private DayBean mData;
     private TimePickerView mPickerView;
-
-
+//    private int flag=0;
+    private Context context;
     @Override
 
     protected void onCreate(@Nullable Bundle savedInstanceState)
@@ -43,7 +45,7 @@ public class EditDayActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit_day);
         ButterKnife.bind(this);
-
+        context=getApplicationContext();
         mData = getIntent().getParcelableExtra(EditDayActivity.class.getSimpleName());
         mLayoutTitle.setText("编辑");
         mEtName.setText(mData != null ? mData.getTitle() : "");
@@ -77,6 +79,10 @@ public class EditDayActivity extends AppCompatActivity
                 finish();
                 break;
             case R.id.tv_action:
+                SharedPreferences sp=context.getSharedPreferences("vac",MODE_PRIVATE);
+                SharedPreferences.Editor editor=sp.edit();
+                editor.putString("vacc",mEtPhone.getText().toString().trim());
+                editor.commit();
                 Toast.makeText(this, "保存成功~", Toast.LENGTH_SHORT).show();
                 EventBus.getDefault().post(mData);
                 finish();

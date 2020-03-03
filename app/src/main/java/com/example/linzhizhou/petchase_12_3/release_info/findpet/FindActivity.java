@@ -67,17 +67,17 @@ public class FindActivity extends AppCompatActivity {
                 List<FindBean> list = new ArrayList<>();
                 //从服务器取数据
 //                byte[] b=bytes;
-                int a = 0;
                 Gson gson=new Gson();
 //                list.add(new FindBean("http://p1.ycw.com/share/201812/21/eeae50b7386108d54b942ac805d8cc52_s600", "上海嘉定区天祝路555弄丢失橘猫一只", "毛先生", "10秒钟以前"));
                 List<FindPetBean> flist = gson.fromJson(sn, new TypeToken<List<FindPetBean>>(){}.getType());
-                for (int j = 0; j < 3; j++) {//一次从数据库中取20条记录
+                int a=flist.size()-1;
+                for (int j = flist.size()-1; j >=0; j--) {//测试一次从数据库中取20条记录
 ////                    list.add(new FindBean(findPetBean));
                     FindPetBean findPetBean=flist.get(j);
 //                    FindPetBean findPetBean=gson.fromJson(sn,FindPetBean.class);
-                    String temp=findPetBean.getIcon();
-                    int aa=0;
-                    list.add(new FindBean(findPetBean.getIcon(),findPetBean.getRe_content(),findPetBean.getReleaser(),findPetBean.getRe_contact()));
+
+                    list.add(new FindBean(findPetBean.getIcon(),findPetBean.getRe_content(),findPetBean.getReleaser(),
+                            findPetBean.getRe_contact()));
                 }
                 mAdapter.setData(list);
             }

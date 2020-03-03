@@ -10,10 +10,11 @@ import cz.msebera.android.httpclient.HttpEntity;
 
 public class HttpUtils {
     //定义String类型来接收接口相同的部分
-//    private static final String BASE_URL = "http://lzzpros.cn:80/";
+    //云服务器
+    private static final String BASE_URL = "http://lzzpros.cn:80/";
 
     //本地测试
-    private static final String BASE_URL = "http://192.168.137.1:8080/";
+//    private static final String BASE_URL = "http://192.168.137.1:8080/";
 
 
     //建立静态的AsyncHttpClient

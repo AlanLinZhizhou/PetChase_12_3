@@ -8,9 +8,11 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.AsyncTask;
+import android.os.Build;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.support.annotation.Nullable;
+import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Base64;
 import android.util.Log;
@@ -30,6 +32,8 @@ import com.loopj.android.http.AsyncHttpResponseHandler;
 import com.loopj.android.http.RequestParams;
 
 import java.io.ByteArrayOutputStream;
+import java.nio.ByteBuffer;
+import java.nio.charset.Charset;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -203,6 +207,7 @@ public class Realease_InfoActivity extends AppCompatActivity {
             }
 
 
+            @RequiresApi(api = Build.VERSION_CODES.O)
             @Override
             protected String doInBackground(Void... params) {
                 BitmapFactory.Options options = null;
@@ -215,7 +220,8 @@ public class Realease_InfoActivity extends AppCompatActivity {
                 bitmap.compress(Bitmap.CompressFormat.PNG, 100, stream);
                 byte[] byte_arr = stream.toByteArray();
                 // Base64图片转码为String
-                encodedString = Base64.encodeToString(byte_arr, 0);
+                encodedString=java.util.Base64.getEncoder().encodeToString(byte_arr);
+//                encodedString = Base64.encodeToString(byte_arr, 0);
                 return "";
             }
 
@@ -245,8 +251,7 @@ public class Realease_InfoActivity extends AppCompatActivity {
         }
         HttpUtils client = new HttpUtils();
         String content=mEdDescript.getText().toString();
-//        params.put("contact","13338612187");
-        params.put("releaser","林志舟");
+        params.put("releaser","admin");
         params.put("re_cotent",content);
         client.post(url, params,new AsyncHttpResponseHandler() {
             @Override

@@ -35,7 +35,7 @@
 
 
     <EditText
-        android:id="@+id/ed_descript"
+        android:id="@+id/advice_descript"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:background="@android:color/white"

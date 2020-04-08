@@ -13,6 +13,7 @@ import android.support.v4.content.ContextCompat;
 import android.widget.Toast;
 
 import com.amap.api.navi.enums.NaviType;
+import com.amap.api.navi.model.AMapNaviLocation;
 import com.amap.api.navi.model.NaviLatLng;
 import com.example.linzhizhou.petchase_12_3.R;
 import com.example.linzhizhou.petchase_12_3.navigate.BaseActivity;
@@ -21,6 +22,8 @@ import com.tckj.zyfsdk.entity.DeviceDetailsEntity;
 import com.tckj.zyfsdk.http.zhttp.listener.ZYFGetBindDeviceListener;
 
 import java.util.List;
+
+import static com.amap.api.navi.enums.ReCalculateRouteType.ROUTE_TYPE_CHANGE_JNYPNT;
 
 
 public class RideRouteCalculateActivity extends BaseActivity {
@@ -33,6 +36,30 @@ public class RideRouteCalculateActivity extends BaseActivity {
     private double deviceJd;
     private double deviceWd;
     private Context context;
+    private int updates=1;
+
+    @Override
+    public void onLocationChange(AMapNaviLocation location) {
+        super.onLocationChange(location);
+        updates++;
+        if(updates==100){
+            updates=updates%100;
+            ZYFSdk.getInstance().getBindDeviceDetails(context, "001221A003E6", new ZYFGetBindDeviceListener() {
+                @Override
+                public void onComplete(DeviceDetailsEntity deviceDetailsEntity) {
+                    deviceJd = Double.parseDouble(deviceDetailsEntity.getRtData().getRecords().get(8).getFieldValue().toString());
+                    deviceWd = Double.parseDouble(deviceDetailsEntity.getRtData().getRecords().get(9).getFieldValue().toString());
+                }
+
+                @Override
+                public void onError(Exception e) {
+
+                }
+            });
+            NaviLatLng tempEndPoint2 = new NaviLatLng(deviceWd, deviceJd);
+            mAMapNavi.calculateRideRoute(tempEndPoint2);
+        }
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,9 +89,7 @@ public class RideRouteCalculateActivity extends BaseActivity {
 
             @Override
             public void onError(Exception e) {
-//                int a;
-//                deviceJd=1;
-//                deviceWd=1;
+
             }
         });
         //double b=getDeviceLocation.getDeviceJd();
@@ -82,6 +107,8 @@ public class RideRouteCalculateActivity extends BaseActivity {
         super.onCalculateRouteSuccess(ids);
         mAMapNavi.startNavi(NaviType.GPS);
     }
+
+
 
     private void requestPermission() {
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {

@@ -21,6 +21,7 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.example.linzhizhou.petchase_12_3.advice.DevelopingActivity;
 import com.example.linzhizhou.petchase_12_3.advice.SuggestActivity;
 import com.example.linzhizhou.petchase_12_3.bind.BindActivity;
 import com.example.linzhizhou.petchase_12_3.release_info.Realease_InfoActivity;
@@ -199,9 +200,12 @@ public class HomeFragment extends Fragment implements View.OnClickListener
             case R.id.button7:
                 openActivity(DayActivity.class);
                 break;
+            case R.id.button8:
+                openActivity(DevelopingActivity.class);
+                break;
             case R.id.button81:
                 //个人用户暂时无法使用支付宝/微信充值
-//                openActivity(PayActivity.class);
+                openActivity(DevelopingActivity.class);
                 break;
             case R.id.button41:
                 openActivity(Realease_InfoActivity.class);

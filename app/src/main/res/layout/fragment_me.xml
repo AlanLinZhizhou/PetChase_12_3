@@ -85,7 +85,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_vertical"
-                        android:text="测试用户1"
+                        android:text="模块开发中"
                         android:textColor="#000000"
                         android:textSize="59px" />
 
@@ -164,6 +164,7 @@
                     android:background="@drawable/me_past_icon" />
 
                 <TextView
+                    android:id="@+id/qiandaotxt"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="27px"
@@ -196,6 +197,7 @@
                     android:background="@drawable/me_walking_icon" />
 
                 <TextView
+                    android:id="@+id/liuchongtxt"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="27px"
@@ -228,6 +230,7 @@
                     android:background="@drawable/me_message_icon" />
 
                 <TextView
+                    android:id="@+id/xiaoxitxt"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="27px"
@@ -254,6 +257,7 @@
                 android:orientation="vertical">
 
                 <TextView
+                    android:id="@+id/chongzuan"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="0"
@@ -261,6 +265,7 @@
                     android:textSize="42px" />
 
                 <TextView
+                    android:id="@+id/chongzuantxt"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="45px"
@@ -277,6 +282,7 @@
                 android:orientation="vertical">
 
                 <TextView
+                    android:id="@+id/chongbi"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="65"
@@ -284,6 +290,7 @@
                     android:textSize="42px" />
 
                 <TextView
+                    android:id="@+id/chongbitxt"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="45px"
@@ -300,6 +307,7 @@
                 android:orientation="vertical">
 
                 <TextView
+                    android:id="@+id/youhui"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="2"
@@ -307,6 +315,7 @@
                     android:textSize="42px" />
 
                 <TextView
+                    android:id="@+id/youhuitxt"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="45px"
@@ -323,6 +332,7 @@
                 android:orientation="vertical">
 
                 <TextView
+                    android:id="@+id/liwu"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="1"
@@ -330,6 +340,7 @@
                     android:textSize="42px" />
 
                 <TextView
+                    android:id="@+id/liwutxt"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="45px"
@@ -381,6 +392,7 @@
                     android:background="@drawable/me_my_pet_icon" />
 
                 <TextView
+                    android:id="@+id/chongwutxt"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="43px"
@@ -411,6 +423,7 @@
                     android:src="@drawable/me_my_friend_icon" />
 
                 <TextView
+                    android:id="@+id/chongyoutxt"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="43px"
@@ -441,6 +454,7 @@
                     android:src="@drawable/me_community_icon" />
 
                 <TextView
+                    android:id="@+id/shequtxt"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="43px"
@@ -471,6 +485,7 @@
                     android:src="@drawable/me_my_favorites_icon" />
 
                 <TextView
+                    android:id="@+id/shoucangtxt"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="43px"
@@ -525,7 +540,7 @@
 
 
                 <TextView
-                    android:id="@+id/account_details"
+                    android:id="@+id/zhanghumingxitxt"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="37px"
@@ -557,6 +572,7 @@
                     android:src="@drawable/me_my_skin_icon" />
 
                 <TextView
+                    android:id="@+id/gexingzhuangbantxt"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="37px"
@@ -587,7 +603,7 @@
                     android:src="@drawable/me_setting_icon" />
 
                 <TextView
-                    android:id="@+id/settings"
+                    android:id="@+id/shezhitxt"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="37px"
@@ -620,7 +636,7 @@
                     android:src="@drawable/me_feedback_icon" />
 
                 <TextView
-                    android:id="@+id/suggestion"
+                    android:id="@+id/yijianfankuitxt"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="37px"

@@ -135,8 +135,8 @@ public class NavigateFragment extends Fragment {
 
                 double dLnt=Double.parseDouble(passjd);
                 double dLat=Double.parseDouble(passwd);
-                dLnt=dLnt+0.00490;
-                dLat=dLat-0.001;
+//                dLnt=dLnt+0.00490;
+//                dLat=dLat-0.001;
                 passjd=dLnt+"";
                 passwd=dLat+"";
                 //double dLnt = Double.parseDouble(deviceDetailsEntity.getRtData().getRecords().get(8).getFieldValue().toString());//经度
@@ -242,9 +242,11 @@ public class NavigateFragment extends Fragment {
 
     private void requestPermission() {
         if (ContextCompat.checkSelfPermission(context, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+            //检查用户是否禁止了该app的动态申请位置权限的请求
             if (ActivityCompat.shouldShowRequestPermissionRationale(getActivity(), Manifest.permission.ACCESS_COARSE_LOCATION)) {
                 Toast.makeText(getActivity(), "拒绝将无法进行宠物追踪哦", Toast.LENGTH_SHORT);
             }
+            //开始申请权限，申请精确位置信息与粗略位置信息
             ActivityCompat.requestPermissions(getActivity(),
                     new String[]{Manifest.permission.ACCESS_COARSE_LOCATION, Manifest.permission.ACCESS_FINE_LOCATION}, 0);
         }

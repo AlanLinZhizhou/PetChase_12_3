@@ -84,7 +84,8 @@ public class FindActivity extends AppCompatActivity {
 
             @Override
             public void onFailure(int i, Header[] headers, byte[] bytes, Throwable throwable) {
-                list.add(new FindBean("http://p1.ycw.com/share/201812/21/eeae50b7386108d54b942ac805d8cc52_s600", "请确保网络连接正常哟", "管理员", "友情提示"));
+                list.add(new FindBean("http://p1.ycw.com/share/201812/21/eeae50b7386108d54b942ac805d8cc52_s600",
+                        "请确保网络连接正常哟", "管理员", "友情提示"));
                 mAdapter.setData(list);
             }
 //        mAdapter.setData(FindBean.getList());

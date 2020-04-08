@@ -1,6 +1,8 @@
 package com.example.linzhizhou.petchase_12_3;
 
+import android.content.Intent;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -18,6 +20,9 @@ public class MainActivity extends AppCompatActivity {
     private RadioGroup radioGroup;
     private RadioButton rbHome,rbNavigate,rbfind,rbMe;
     static  final int NUM_ITEMS=4;
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,6 +37,21 @@ public class MainActivity extends AppCompatActivity {
         super.onStart();
         radioGroup.check(R.id.home);
     }
+
+    //不运行
+//    @Override
+//    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+//        super.onActivityResult(requestCode, resultCode, data);
+//        if(requestCode==4&&resultCode==4){
+//            //通过Fragment的适配器Adapter和index来替换帧布局中的内容
+//            Fragment fragment=(Fragment)adapter.instantiateItem(homeContent,4);
+//
+//            //开始将帧布局中的内容设置为第一个，即“首页”选项
+//            adapter.setPrimaryItem(homeContent,4,fragment);
+//            //设置回调，完成更新
+//            adapter.finishUpdate(homeContent);
+//        }
+//    }
 
     protected void initView(){
         homeContent=findViewById(R.id.homeContent);
@@ -63,7 +83,7 @@ public class MainActivity extends AppCompatActivity {
                 Fragment fragment=(Fragment)adapter.instantiateItem(homeContent,index);
 
                 //开始将帧布局中的内容设置为第一个，即“首页”选项
-                adapter.setPrimaryItem(homeContent,0,fragment);
+                adapter.setPrimaryItem(homeContent,index,fragment);
                 //设置回调，完成更新
                 adapter.finishUpdate(homeContent);
             }
